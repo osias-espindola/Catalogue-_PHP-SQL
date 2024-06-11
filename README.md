@@ -9,8 +9,8 @@
 
 Une fois que Docker a terminé l'installation:
 
--   `index.php` se trouve sur `http://localhost:8001/`
--   phpMyAdmin se trouve sur `http://localhost:8081`
+-   `index.php` se trouve sur `http://localhost:8005/`
+-   phpMyAdmin se trouve sur `http://localhost:8085`
 
 ## Les défis
 
