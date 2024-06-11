@@ -12,9 +12,6 @@
     <section1>
 
     </section>
-    <section2>
-
-    </section>
     <footer>
 
     </footer>
