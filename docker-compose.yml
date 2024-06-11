@@ -32,4 +32,4 @@ services:
             PMA_PASSWORD: root
             UPLOAD_LIMIT: 20M
         ports:
-            - "8085:80" # on définit le port pour accéder à phpmyadmin (localhost:8086)
+            - "8085:80" # on définit le port pour accéder à phpmyadmin (localhost:8085)
