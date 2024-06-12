@@ -26,3 +26,7 @@ nav li a{
 nav li a :hover{
     color: white;
 }
+
+.flex_col{display: flex;
+flex-direction: column;
+}
