@@ -11,10 +11,11 @@
 <nav>
     <div class=nav_barra>
         <div class= "logo_nav">
-            <img  src="/img/Logo05.png" alt="">
+            <img  src="/img/Logo05.png" alt="" class="logo">
         </div>
         <div class= "recherche">
-            <input type="text">
+
+            <input type="text" name= "" id= "" placeholder= "  Faire une recherche">
         </div>
         <div class="icon">
         
