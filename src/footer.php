@@ -16,14 +16,11 @@
             box-sizing: border-box;
             font-family: arial;
         }
-        .footer {
-            height: 400px;
-        }
+        
         .bg-footer {
             padding: 20px;
             background-color: #213447;
             height: 150px;
-            
             font-size: 3rem;
             color: white;
         }
@@ -32,6 +29,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            color: #213447;
         }
 
         
