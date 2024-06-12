@@ -13,8 +13,7 @@ span{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
-    width: 15px;
-    height: 15px;
+    gap: 15px;
     
 }
 .nav_barra{
@@ -30,16 +29,17 @@ span{
    
 }
 .logo_nav{
-display: flex;
-justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start;
+
 }
 nav {
     background-color: #213447;
     
 }
 nav img{
-    width: 30.5px;
-    height: 30.5px;
+    width: 20.5px;
+    height: 20.5px;
     padding: 0.5px;
     
 }
