@@ -13,8 +13,20 @@ span{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
+    
 }
-
+.nav_barra{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px;
+}
+.recherche{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+}
 .logo_nav{
 display: flex;
 justify-content: flex-start;
@@ -24,13 +36,13 @@ nav {
     
 }
 nav img{
-    width: 23.5px;
-    height: 23.5px;
+    width: 30.5px;
+    height: 30.5px;
     padding: 0.5px;
     
 }
 input{
-    width: 50%;
+    width: 150%;
 }
 nav li{
     display: inline-block;

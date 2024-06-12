@@ -9,12 +9,19 @@
 </head>
 <body>
 <nav>
-    <div class="icon">
-        <img class= "logo_nav" src="/img/Logo05.png" alt="">
-        <input type="text">
-        <span id= "Person" class="material-symbols-outlined">Person</span>
-        <span id= "Storefront" class="material-symbols-outlined">Storefront</span>
-        <span  id= "burger" class="material-symbols-outlined">menu</span>
+    <div class=nav_barra>
+        <div class= "logo_nav">
+            <img  src="/img/Logo05.png" alt="">
+        </div>
+        <div class= "recherche">
+            <input type="text">
+        </div>
+        <div class="icon">
+        
+            <span id= "Person" class="material-symbols-outlined">Person</span>
+            <span id= "Storefront" class="material-symbols-outlined">Storefront</span>
+            <span  id= "burger" class="material-symbols-outlined">menu</span>
+        </div>
     </div>
     <nav_ul>
         <ul>
