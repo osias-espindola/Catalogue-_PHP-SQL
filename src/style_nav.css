@@ -45,6 +45,7 @@ nav img{
 }
 input{
     width: 340px;
+    border-radius: 5px;
 }
 nav li{
     display: inline-block;
