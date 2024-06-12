@@ -102,6 +102,9 @@
 
     </style>
 </head>
+<?php
+        include 'nav.php';
+        ?>
 <body>
     <section1>
         <div class="header">
