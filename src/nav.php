@@ -20,10 +20,10 @@
         
             <span id= "Person" class="material-symbols-outlined">Person</span>
             <span id= "Storefront" class="material-symbols-outlined">Storefront</span>
-            <span  id= "burger" class="material-symbols-outlined">menu</span>
+            <span  id= "burger" class="material-symbols-outlined" onclick= "clickMenu()">menu</span>
         </div>
     </div>
-    <div class="menu_ul">
+    <div class="menu_ul" id="objets">
         <ul>
             <li><a href="#">ROMANS</a></li>
             <li><a href="#">DB</a></li> 
@@ -50,6 +50,10 @@
         </div>
     </div>
 </nav>  
-
+<script>
+    function clickMenu() {
+        objets.style.display = "block"
+    }
+</script>
 </body>
 </html>
