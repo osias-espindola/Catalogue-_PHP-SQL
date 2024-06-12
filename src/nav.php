@@ -26,13 +26,12 @@
         <P>NOUVEAUTES</P>
     </div>  
     <ul>
-        <ul>
-            <li><a href="Aventures"></a></li>
-            <li><a href="Policier"></a></li>
-            <li><a href="Fantastic"></a></li>
-            <li><a href="Science fiction"></a></li>
-            <li><a href="Amour"></a></li>
-        </ul>
+        <li><a href="Aventures"></a></li>
+        <li><a href="Policier"></a></li>
+        <li><a href="Fantastic"></a></li>
+        <li><a href="Science fiction"></a></li>
+        <li><a href="Amour"></a></li>
+        
     </ul>
 </nav>  
 
