@@ -63,3 +63,7 @@ nav li a :hover{
     display: flex;
     flex-direction: column;
 }
+
+.menu_ul{
+    display: none;
+}
