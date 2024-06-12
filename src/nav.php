@@ -52,7 +52,11 @@
 </nav>  
 <script>
     function clickMenu() {
-        objets.style.display = "block"
+        if (objets.style.display == "block") {
+            objets.style.display = "none"
+        } else{
+            objets.style.display = "block"
+        }
     }
 </script>
 </body>
