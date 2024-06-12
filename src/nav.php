@@ -14,8 +14,8 @@
             <img  src="/img/Logo05.png" alt="" class="logo">
         </div>
         <div class= "recherche">
-
             <input type="text" name= "" id= "" placeholder= "  Faire une recherche">
+            <img src="/img/loupe.png" alt="">
         </div>
         <div class="icon">
         
