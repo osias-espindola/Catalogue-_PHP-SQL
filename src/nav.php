@@ -9,9 +9,13 @@
 </head>
 <body>
 <nav>
-    <span id= "Person" class="material-symbols-outlined">Person</span>
-    <span id= "Storefront" class="material-symbols-outlined">Storefront</span>
-    <span  id= "burger" class="material-symbols-outlined">menu</span>
+    <div class="icon">
+        <img class= "logo_nav" src="/img/Logo05.png" alt="">
+        <input type="text">
+        <span id= "Person" class="material-symbols-outlined">Person</span>
+        <span id= "Storefront" class="material-symbols-outlined">Storefront</span>
+        <span  id= "burger" class="material-symbols-outlined">menu</span>
+    </div>
     <nav_ul>
         <ul>
             <li><a href="#">ROMANS</a></li>
