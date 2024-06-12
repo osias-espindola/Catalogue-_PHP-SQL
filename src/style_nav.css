@@ -14,7 +14,7 @@ span{
     flex-wrap: nowrap;
     justify-content: flex-end;
     gap: 15px;
-    
+    cursor: pointer;
 }
 .nav_barra{
     display: flex;
