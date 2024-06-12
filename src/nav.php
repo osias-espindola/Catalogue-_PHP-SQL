@@ -9,9 +9,9 @@
 </head>
 <body>
 <nav>
-    <span class="material-symbols-outlined">Person</span>
-    <span class="material-symbols-outlined">Storefront</span>
-    <span class="material-symbols-outlined">menu</span>
+    <span id= "Person" class="material-symbols-outlined">Person</span>
+    <span id= "Storefront" class="material-symbols-outlined">Storefront</span>
+    <span  id= "burger" class="material-symbols-outlined">menu</span>
     <nav_ul>
         <ul>
             <li><a href="#">ROMANS</a></li>
