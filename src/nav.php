@@ -9,9 +9,9 @@
 </head>
 <body>
 <nav>
-<span class="material-symbols-outlined">Person</span>
-<span class="material-symbols-outlined">Storefront</span>
-<span class="material-symbols-outlined">menu</span>
+    <span class="material-symbols-outlined">Person</span>
+    <span class="material-symbols-outlined">Storefront</span>
+    <span class="material-symbols-outlined">menu</span>
 
     <ul>
         <li><a href="#">ROMANS</a></li>
@@ -19,12 +19,22 @@
         <li><a href="#">THEATRE</a></li>
         <li><a href="#">GRANDIR</a></li>
         <li><a href="#">ESSAIS</a></li>
-</ul>
+    </ul>
 
     <div>
         <P>PAGE D'ACCUEIL</P>
         <P>NOUVEAUTES</P>
     </div>  
+    <ul>
+        <ul>
+            <li><a href="Aventures"></a></li>
+            <li><a href="Policier"></a></li>
+            <li><a href="Fantastic"></a></li>
+            <li><a href="Science fiction"></a></li>
+            <li><a href="Amour"></a></li>
+        </ul>
+    </ul>
 </nav>  
+
 </body>
 </html>
