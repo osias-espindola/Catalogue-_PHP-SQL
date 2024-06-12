@@ -6,13 +6,15 @@
     <title>Document</title>
     <style>
         body {
+           margin: 0;
+           padding: 0;
            text-align: center;
            color: white;
         }
 
         .header {
             width: 100%;
-            height: 450px;
+            height: 550px;
             background-image: url("img/bibliotheque.png");
             background-position: bottom;
             background-size: cover;
@@ -26,7 +28,7 @@
     </nav>
     <section1>
         <div class="header">
-            <h1>Bienvenue au coin de Littérature</h1>
+            <h1>Bienvenue au coin de littérature</h1>
 
         </div>
     </section>
