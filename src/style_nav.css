@@ -21,7 +21,12 @@ span{
     flex-direction: row;
     padding: 10px;
 }
-
+.recherche{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+}
 .logo_nav{
 display: flex;
 justify-content: flex-start;
@@ -31,8 +36,8 @@ nav {
     
 }
 nav img{
-    width: 23.5px;
-    height: 23.5px;
+    width: 30.5px;
+    height: 30.5px;
     padding: 0.5px;
     
 }
