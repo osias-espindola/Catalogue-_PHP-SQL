@@ -7,7 +7,8 @@
 span{
     color: white;
 }
-nav{
+
+nav {
     background-color: #213447;
     
 }
@@ -27,6 +28,7 @@ nav li a :hover{
     color: white;
 }
 
-.flex_col{display: flex;
-flex-direction: column;
+.flex_col{
+    display: flex;
+    flex-direction: column;
 }
