@@ -12,21 +12,23 @@
     <span class="material-symbols-outlined">Person</span>
     <span class="material-symbols-outlined">Storefront</span>
     <span class="material-symbols-outlined">menu</span>
-
-    <ul>
-        <li><a href="#">ROMANS</a></li>
-        <li><a href="#">DB</a></li> 
-        <li><a href="#">THEATRE</a></li>
-        <li><a href="#">GRANDIR</a></li>
-        <li><a href="#">ESSAIS</a></li>
-    </ul>
+    <nav_ul>
+        <ul>
+            <li><a href="#">ROMANS</a></li>
+            <li><a href="#">DB</a></li> 
+            <li><a href="#">THEATRE</a></li>
+            <li><a href="#">GRANDIR</a></li>
+            <li><a href="#">ESSAIS</a></li>
+        </ul>
 
     <div>
-        <P>PAGE D'ACCUEIL</P>
-        <P>NOUVEAUTES</P>
-    </div>  
-    <div class="flex_col">
         <ul>
+            <li><a href="#">PAGE D'ACCUEIL</a></li>
+            <li><a href="#">NOUVEAUTES</a></li>
+        </ul>
+    </div>  
+    <div >
+        <ul class="flex_col">
             <li><a href="#">Aventures</a></li>
             <li><a href="#">Policier</a></li>
             <li><a href="#">Fantastic</a></li>
@@ -35,6 +37,7 @@
             
         </ul>
     </div>
+    </nav_ul>
 </nav>  
 
 </body>
