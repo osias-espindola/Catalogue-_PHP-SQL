@@ -20,7 +20,8 @@ span{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    padding: 10px 25px 10px 10px ;
+    align-items: center;
+    padding: 10px 25px 4px 10px ;
 }
 .recherche{
     display: flex;
@@ -44,12 +45,13 @@ nav img{
     
 }
 .logo{
-    width: 30.5px;
-    height: 30.5px;
+    width: 32.5px;
+    height: 32.5px;
 }
 
 input{
     width: 340px;
+    height: 30px;
     border-radius: 5px;
 }
 nav li{
