@@ -18,7 +18,9 @@
         }
         
         .bg-footer {
-            padding: 20px;
+            display:flex;
+            align-items: center;
+            padding-left: 20px;
             background-color: #213447;
             height: 150px;
             font-size: 3rem;
@@ -34,19 +36,51 @@
 
         
         .footer-text-margin {
-            margin: 20px;
+            margin: 10px 20px;
         }
+
+        @media screen and (max-width: 600px) {
+    .bg-footer p {
+        font-size: 2.5rem;
+    }
+    .bg-footer {
+        height: 130px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .bg-footer p {
+    font-size: 2rem;
+    }
+
+    .bg-footer {
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .bg-footer p {
+            font-size: 1.5rem;
+            }
+
+            .bg-footer {
+            height: 80px;
+            }
+        }
+
 
         @media screen and (max-width: 350px) {
             .footer-text {
                 flex-direction: column;
                 align-items: center; 
                 text-align: center;
-            .footer-text-margin {
-                margin: 10px 0;
+                margin: 2px ;
+            
+            }.footer-text p {
+                font-size: 0.8rem;
             }
         }
-    }
+    
 
         </style>
 </head>
