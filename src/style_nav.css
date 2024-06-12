@@ -6,13 +6,26 @@
 
 span{
     color: white;
+    display: flex;
 }
-
+.icon{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
 nav {
     background-color: #213447;
     
 }
-
+nav img{
+    width: 23.5px;
+    height: 23.5px;
+    padding: 0.5px;
+}
+input{
+    width: 50%;
+}
 nav li{
     display: inline-block;
 }
