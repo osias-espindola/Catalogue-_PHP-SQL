@@ -18,9 +18,10 @@
         </div>
         <div class="icon">
         
-            <span id= "Person" class="material-symbols-outlined">Person</span>
-            <span id= "Storefront" class="material-symbols-outlined">Storefront</span>
-            <span  id= "burger" class="material-symbols-outlined" onclick= "clickMenu()">menu</span>
+            <img  src="/img/user.png" alt="">
+            <img  src="/img/panier.png" alt="">
+            <img  src="/img/menuBurger.png" alt="" onclick= "clickMenu()">
+            <!-- <span  id= "burger" class="material-symbols-outlined" onclick= "clickMenu()">menu</span> -->
         </div>
     </div>
     <div class="menu_ul" id="objets">

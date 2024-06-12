@@ -13,6 +13,8 @@ span{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
+    width: 15px;
+    height: 15px;
     
 }
 .nav_barra{
