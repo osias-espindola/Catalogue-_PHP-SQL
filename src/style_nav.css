@@ -13,12 +13,15 @@ span{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
+    
 }
 .nav_barra{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    padding: 10px;
 }
+
 .logo_nav{
 display: flex;
 justify-content: flex-start;
@@ -34,7 +37,7 @@ nav img{
     
 }
 input{
-    width: 50%;
+    width: 150%;
 }
 nav li{
     display: inline-block;
