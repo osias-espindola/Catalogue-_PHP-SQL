@@ -10,7 +10,7 @@
 <body>
 <nav>
     <div class="icon">
-        <img src="/img/Logo05.png" alt="">
+        <img class= "logo_nav" src="/img/Logo05.png" alt="">
         <input type="text">
         <span id= "Person" class="material-symbols-outlined">Person</span>
         <span id= "Storefront" class="material-symbols-outlined">Storefront</span>
