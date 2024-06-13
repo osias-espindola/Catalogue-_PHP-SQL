@@ -52,7 +52,9 @@ nav img{
 }
 
 .recherche input {
-    width: 340px;
+    width: 100%; /* Largura total dentro do seu contêiner */
+    max-width: 900px; /* Largura máxima da barra de pesquisa */
+    /* Outros estilos */
     height: 31px;
     border-radius: 5px 0 0 5px;
 }
