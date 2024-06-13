@@ -1,7 +1,7 @@
 <?php
 require_once('connect.php');
 
-$sql = "SELECT * FROM `livres` WHERE `publication` > '2024-05-01' ORDER BY `genre` ASC";
+$sql = "SELECT * FROM `livres` WHERE `publication` > '2024-04-20' ORDER BY `genre` ASC";
 $query = $db->prepare($sql);
 $query->execute();
 $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -35,10 +35,32 @@ $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
             font-size: 3rem;
         }
 
+        body {
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 1.5%;
+            margin-left:1.5%;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #213447;
+            text-shadow: 0px 0px 2px #213447; 
+        }
+
         img {
-            width: 178px;
-            height: 233px;
-            image-rendering: high-quality;
+            width: 267px;
+            height: 350px;
+            border-radius: 3px
+
+        }
+        
+        .carroussel {
+            display: flex;
+        }
+
+        .pad {
+            margin: 0.3%;
         }
         
         @media screen and (max-width: 1440px) {
@@ -122,20 +144,21 @@ $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </section1>
     <section2>
+
+    <h2>NOUVEAUTES</h2>
         <div class="carroussel">
-            <div>
-                <table>
-                    <tr>
+                
                         <?php foreach ($nouveautes as $nouveaute): ?>
-                            <td>
+                            <div class="pad carte">
                                 <img src="display_image.php?id=<?=$nouveaute['id']?>" alt="<?=$nouveaute['titre']?>">
-                            </td>
+                            </div>
                         <?php endforeach; ?>
-                    </tr>
-                </table>
-            </div>
+                   
         </div>
     </section2>
+    <div class="barre">
+
+    </div>
     <section3></section3>
     <footer>
         <?php include 'footer.php'; ?>
