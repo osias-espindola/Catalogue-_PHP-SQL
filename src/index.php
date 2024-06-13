@@ -1,3 +1,7 @@
+<?php
+    require_once ('connect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,8 +118,15 @@
         </div>
     </section>
     <section2>
+        <div class="carroussel">
+            <div>
 
-    </section>
+            </div>
+        </div>
+    </section2>
+    <section3>
+
+    </section3>
     <footer>
         <?php
         include 'footer.php';
