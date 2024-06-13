@@ -26,31 +26,32 @@
         </div>
     </div>
     <div class="menu_ul" id="objets">
-        <ul>
-            <li><a href="#">ROMANS</a></li>
-            <li><a href="#">DB</a></li> 
-            <li><a href="#">THEATRE</a></li>
-            <li><a href="#">GRANDIR</a></li>
-            <li><a href="#">ESSAIS</a></li>
-        </ul>
-
-        <div>
+        <div class="menu_genre ligne_separe">
+            <ul>
+                <li><a href="#">ROMANS</a></li>
+                <li><a href="#">DB</a></li> 
+                <li><a href="#">THEATRE</a></li>
+                <li><a href="#">GRANDIR</a></li>
+                <li><a href="#">ESSAIS</a></li>
+             </ul>
+        </div>
+        <div class= "ligne_separe">
             <ul>
                 <li><a href="#">PAGE D'ACCUEIL</a></li>
                 <li><a href="#">NOUVEAUTES</a></li>
             </ul>
         </div>  
-        <div >
+        <div classe= "menu_sous_genre ligne_separe">
             <ul class="flex_col">
                 <li><a href="#">Aventures</a></li>
                 <li><a href="#">Policier</a></li>
                 <li><a href="#">Fantastic</a></li>
                 <li><a href="#">Science fiction</a></li>
                 <li><a href="#">Amour</a></li>
-                
             </ul>
-        </div>
-    </div>
+        </div> <!--classe=menu_sous_genre-->
+        <p ><a href="#" class="bt_retour">Retour</a></p>
+    </div> <!--menu_ul-->
 </nav>  
 <script>
     function clickMenu() {

@@ -80,8 +80,18 @@ nav li a :hover{
 
 .menu_ul{
     display: none;
+    border-top: solid white 20px;
+}
+.ligne_separe{
+    border-bottom: solid #ffffff 2px;
 }
 
+.bt_retour{
+    color: rgb(255, 255, 255);
+    text-decoration:none;   
+    padding: 15px;
+    display: inline-block;
+}
 /* travaille sur le responsive */
 @media screen and (max-width: 1440px) {
  
