@@ -21,9 +21,11 @@
         
             <img  src="/img/user.png" alt="">
             <img  src="/img/panier.png" alt="">
-            <img  src="/img/menuBurger.png" alt="" onclick= "clickMenu()">
-            <!-- <span  id= "burger" class="material-symbols-outlined" onclick= "clickMenu()">menu</span> -->
-        </div>
+            <div class= "menuBurger">
+                <img  src="/img/menuBurger.png" alt="" onclick= "clickMenu()">
+                <!-- <span  id= "burger" class="material-symbols-outlined" onclick= "clickMenu()">menu</span> -->
+            </div>     
+        </div>  
     </div>
     <div class="menu_ul" id="objets">
         <div class="menu_genre ligne_separe">

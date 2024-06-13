@@ -118,7 +118,9 @@ nav li a :hover{
 }
 
 @media screen and (max-width: 600px) {
-   
+   .menuBurger{
+    display: "none";
+   }
 }
 
 @media screen and (max-width: 425px) {
@@ -128,3 +130,25 @@ nav li a :hover{
 @media screen and (max-width: 375px) {
   
         }
+
+        /* Estilo para telas de monitor ou maiores - mostra o menu de gêneros */
+@media screen and (min-width: 1024px) {
+    .menu_genre {
+        /* display: flex; /*Mostra o menu de gêneros */
+    }
+
+    .menuBurger {
+        display: none; /* Continua ocultando o ícone do menu hambúrguer */
+    }
+}
+
+/* Estilo para telas de smartphone - mostra o ícone do menu hambúrguer */
+@media screen and (max-width: 1023px) {
+    .menu_genre {
+        display: none; /* Oculta o menu de gêneros */
+    }
+
+    .menuBurger {
+        display: block; /* Mostra o ícone do menu hambúrguer */
+    }
+}
