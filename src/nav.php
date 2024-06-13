@@ -12,7 +12,11 @@
     <div class=nav_barra>
         <div class= "logo_nav">
             <img  src="/img/Logo05.png" alt="" class="logo">
+            <div class="page_name">
+                <p>Le coin de littérature</p>
+            </div>
         </div>
+        
         <div class= "recherche">
             <input type="text" name= "" id= "" placeholder= "  Faire une recherche">
             <img src="/img/loupe.png" alt="" class="loupe">

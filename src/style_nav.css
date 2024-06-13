@@ -50,7 +50,12 @@ nav img{
     width: 32.5px;
     height: 32.5px;
 }
-
+.page_name{
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
 .recherche input {
     width: 100%; /* Largura total dentro do seu contêiner */
     max-width: 900px; /* Largura máxima da barra de pesquisa */
@@ -151,4 +156,7 @@ nav li a :hover{
     .menuBurger {
         display: block; /* Mostra o ícone do menu hambúrguer */
     }
+    .page_name{
+        display: none;
+        }
 }
