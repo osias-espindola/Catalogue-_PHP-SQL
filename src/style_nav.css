@@ -51,7 +51,7 @@ nav img{
     height: 32.5px;
 }
 
-input{
+.recherche input {
     width: 340px;
     height: 31px;
     border-radius: 5px 0 0 5px;
