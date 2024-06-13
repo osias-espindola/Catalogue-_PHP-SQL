@@ -82,6 +82,13 @@ nav li a :hover{
     display: none;
     border-top: solid white 20px;
 }
+.menu_genre{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
 .ligne_separe{
     border-bottom: solid #ffffff 2px;
 }

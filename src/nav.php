@@ -41,7 +41,7 @@
                 <li><a href="#">NOUVEAUTES</a></li>
             </ul>
         </div>  
-        <div classe= "menu_sous_genre ligne_separe">
+        <div class= "menu_sous_genre ligne_separe">
             <ul class="flex_col">
                 <li><a href="#">Aventures</a></li>
                 <li><a href="#">Policier</a></li>
@@ -49,7 +49,7 @@
                 <li><a href="#">Science fiction</a></li>
                 <li><a href="#">Amour</a></li>
             </ul>
-        </div> <!--classe=menu_sous_genre-->
+        </div> <!--class=menu_sous_genre-->
         <p ><a href="#" class="bt_retour">Retour</a></p>
     </div> <!--menu_ul-->
 </nav>  
