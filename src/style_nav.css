@@ -82,74 +82,32 @@ nav li a :hover{
     display: none;
 }
 
-
+/* travaille sur le responsive */
 @media screen and (max-width: 1440px) {
-    h1 {
-        font-size: 3.5rem;
-    }
-
-    .header {
-        height: 500px;
-    }
+ 
 }
 
 
 @media screen and (min-width: 1440px) {
-    h1 {
-        font-size: 4rem;
-    }
-
-    .header {
-        height: 550px;
-    }
+ 
 }
 
 @media screen and (max-width: 1024px) {
-    h1 {
-        font-size: 3rem;
-    }
 
-    .header {
-        height: 350px;
-    }
 }
 
 @media screen and (max-width: 768px) {
-    h1 {
-        font-size: 2.75rem;
-    }
-
-    .header {
-        height: 300px;
-    }
+    
 }
 
 @media screen and (max-width: 600px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    .header {
-        height: 250px;
-    }
+   
 }
 
 @media screen and (max-width: 425px) {
-    h1 {
-    font-size: 2rem;
-    }
 
-    .header {
-        height: 200px;
-    }
 }
 
 @media screen and (max-width: 375px) {
-            h1 {
-            font-size: 1.5rem;
-            }
-
-            .header {
-            height: 150px;
-            }
+  
         }
