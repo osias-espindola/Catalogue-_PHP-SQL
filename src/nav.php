@@ -31,6 +31,16 @@
             </div>     
         </div>  
     </div>
+    <div class="menu_fixe" >
+        <div class="menu_genre ligne_separe">
+            <ul>
+                <li><a href="#">ROMANS</a></li>
+                <li><a href="#">DB</a></li> 
+                <li><a href="#">THEATRE</a></li>
+                <li><a href="#">GRANDIR</a></li>
+                <li><a href="#">ESSAIS</a></li>
+             </ul>
+        </div>
     <div class="menu_ul" id="objets">
         <div class="menu_genre ligne_separe">
             <ul>
