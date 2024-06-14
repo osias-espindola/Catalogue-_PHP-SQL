@@ -33,7 +33,7 @@ $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
         
         <div class= "recherche">
             <input type="text" name= "recherche" id= "recherche" placeholder= "  Faire une recherche">
-            <img src="/img/loupe.png" alt="" class="loupe">
+            <button type="submit" class="loupe"><img src="/img/loupe.png" alt="Pesquisar" ></button>
         </div>
         <div class="icon">
         
