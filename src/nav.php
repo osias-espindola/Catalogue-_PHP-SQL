@@ -10,6 +10,8 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
 
 
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -51,14 +53,20 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <div class= >
         <div class="menu_fixe ligne_separe">
-        <?php foreach ($genres as $genre): ?>
             <ul>
-                <li><a href="#"><?=  mb_strtoupper($genre) ?></a></li>  <!-- mb_strtoupper() converte o texto para letra maiuscula  -->
-                    <div class="sous_genre">
+                <li><a href="#">ROMANS</a></li>
+                    <!-- <div class="sous_genre">
                         <li><a href="Aventure"></a></li>
-                      
+                        <li><a href="Fantastique"></a></li>
+                        <li><a href="Policier"></a></li>
+                        <li><a href="Romance"></a></li>
+                        <li><a href=""></a></li>
+                    </div> -->
+                <li><a href="#">DB</a></li> 
+                <li><a href="#">THÉÂTRE</a></li>
+                <li><a href="#">GRANDIR</a></li>
+                <li><a href="#">ESSAIS</a></li>
              </ul>
-        <?php endforeach; ?>     
         </div>
     <div class="menu_ul" id="objets">
         <div class="menu_genre ligne_separe">
