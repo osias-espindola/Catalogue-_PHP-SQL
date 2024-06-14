@@ -68,8 +68,16 @@ nav img{
 
 button.loupe{
     background-color: #ffffff;
-    border: none;  
+    border-radius: 3px;
+    border: none; 
+    cursor: pointer; 
+
 }
+
+button.loupe:hover{
+    transform: scale(1.04);
+}
+
 nav li{
     display: inline-block;
 }
