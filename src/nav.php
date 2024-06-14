@@ -6,7 +6,7 @@ $sql = "SELECT * FROM `livres` ORDER BY `genre` DESC";
 
 $query = $db->prepare($sql);
 $query->execute();
-$nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
+$tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
 
 
 
@@ -51,20 +51,14 @@ $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <div class= >
         <div class="menu_fixe ligne_separe">
+        <?php foreach ($genres as $genre): ?>
             <ul>
-                <li><a href="#">ROMANS</a></li>
+                <li><a href="#"><?=  mb_strtoupper($genre) ?></a></li>  <!-- mb_strtoupper() converte o texto para letra maiuscula  -->
                     <div class="sous_genre">
                         <li><a href="Aventure"></a></li>
-                        <li><a href="Fantastique"></a></li>
-                        <li><a href="Policier"></a></li>
-                        <li><a href="Romance"></a></li>
-                        <li><a href=""></a></li>
-                    </div>
-                <li><a href="#">DB</a></li> 
-                <li><a href="#">THEATRE</a></li>
-                <li><a href="#">GRANDIR</a></li>
-                <li><a href="#">ESSAIS</a></li>
+                      
              </ul>
+        <?php endforeach; ?>     
         </div>
     <div class="menu_ul" id="objets">
         <div class="menu_genre ligne_separe">
