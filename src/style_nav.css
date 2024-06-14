@@ -30,6 +30,8 @@ span{
     align-items: center;
     background-color: #ffffff;
     border-radius: 5px;
+    width: 500px;
+    margin: 0 10px 0 10px;
 }
 .logo_nav{
     display: flex;
@@ -94,6 +96,12 @@ nav li a :hover{
     flex-wrap: nowrap;
     gap: 20px;
 }
+
+.menu_fixe{
+    display: flex;
+    justify-content:center;
+    width: 100%;
+}
 .ligne_separe{
     border-bottom: solid #ffffff 2px;
 }
@@ -123,9 +131,7 @@ nav li a :hover{
 }
 
 @media screen and (max-width: 600px) {
-   .menuBurger{
-    display: "none";
-   }
+   
 }
 
 @media screen and (max-width: 425px) {
@@ -141,6 +147,7 @@ nav li a :hover{
     .menu_genre {
         /* display: flex; /*Mostra o menu de gêneros */
     }
+   
 
     .menuBurger {
         display: none; /* Continua ocultando o ícone do menu hambúrguer */
@@ -150,7 +157,7 @@ nav li a :hover{
 /* Estilo para telas de smartphone - mostra o ícone do menu hambúrguer */
 @media screen and (max-width: 1023px) {
     .menu_genre {
-        display: none; /* Oculta o menu de gêneros */
+        /* display: none; Oculta o menu de gêneros */
     }
 
     .menuBurger {
@@ -159,4 +166,7 @@ nav li a :hover{
     .page_name{
         display: none;
         }
+    .menu_fixe{
+        display: none;
+    }    
 }

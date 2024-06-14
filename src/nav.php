@@ -1,3 +1,17 @@
+<?php
+
+require_once('connect.php');
+
+$sql = "SELECT * FROM `livres` ORDER BY `genre` DESC";
+
+$query = $db->prepare($sql);
+$query->execute();
+$nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="style_nav.css">
-    <title>Document</title>
+    <title>nav barra</title>
 </head>
 <body>
 <nav>
@@ -18,7 +32,7 @@
         </div>
         
         <div class= "recherche">
-            <input type="text" name= "" id= "" placeholder= "  Faire une recherche">
+            <input type="text" name= "recherche" id= "recherche" placeholder= "  Faire une recherche">
             <img src="/img/loupe.png" alt="" class="loupe">
         </div>
         <div class="icon">
@@ -31,6 +45,16 @@
             </div>     
         </div>  
     </div>
+    <div class= >
+        <div class="menu_fixe ligne_separe">
+            <ul>
+                <li><a href="#">ROMANS</a></li>
+                <li><a href="#">DB</a></li> 
+                <li><a href="#">THEATRE</a></li>
+                <li><a href="#">GRANDIR</a></li>
+                <li><a href="#">ESSAIS</a></li>
+             </ul>
+        </div>
     <div class="menu_ul" id="objets">
         <div class="menu_genre ligne_separe">
             <ul>
