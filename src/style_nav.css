@@ -66,8 +66,9 @@ nav img{
     border-radius: 5px 0 0 5px;
 }
 
-.loupe{
-    text-decoration: ;
+button.loupe{
+    background-color: #ffffff;
+    border: none;  
 }
 nav li{
     display: inline-block;
