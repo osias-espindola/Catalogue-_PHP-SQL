@@ -50,7 +50,12 @@ nav img{
     width: 32.5px;
     height: 32.5px;
 }
-
+.page_name{
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
 .recherche input {
     width: 100%; /* Largura total dentro do seu contêiner */
     max-width: 900px; /* Largura máxima da barra de pesquisa */
@@ -118,7 +123,9 @@ nav li a :hover{
 }
 
 @media screen and (max-width: 600px) {
-   
+   .menuBurger{
+    display: "none";
+   }
 }
 
 @media screen and (max-width: 425px) {
@@ -128,3 +135,28 @@ nav li a :hover{
 @media screen and (max-width: 375px) {
   
         }
+
+        /* Estilo para telas de monitor ou maiores - mostra o menu de gêneros */
+@media screen and (min-width: 1024px) {
+    .menu_genre {
+        /* display: flex; /*Mostra o menu de gêneros */
+    }
+
+    .menuBurger {
+        display: none; /* Continua ocultando o ícone do menu hambúrguer */
+    }
+}
+
+/* Estilo para telas de smartphone - mostra o ícone do menu hambúrguer */
+@media screen and (max-width: 1023px) {
+    .menu_genre {
+        display: none; /* Oculta o menu de gêneros */
+    }
+
+    .menuBurger {
+        display: block; /* Mostra o ícone do menu hambúrguer */
+    }
+    .page_name{
+        display: none;
+        }
+}
