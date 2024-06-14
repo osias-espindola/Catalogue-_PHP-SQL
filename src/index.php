@@ -1,12 +1,44 @@
 <?php
 require_once('connect.php');
 
-// $sql = "SELECT * FROM `livres` WHERE `publication` > '2024-05-01' ORDER BY `genre` ASC";
-$sql = "SELECT * FROM `livres` WHERE `publication` > '2023-01-01' AND `genre` LIKE 'Roman' ORDER BY `genre` ASC";
+
+
+$sql = "SELECT * FROM `livres` WHERE `genre` LIKE 'Théâtre' ORDER BY `sous_genre` ASC";
 
 $query = $db->prepare($sql);
 $query->execute();
 $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
+
+$sql = "SELECT * FROM `livres` WHERE `genre` LIKE 'Roman' ORDER BY `genre` DESC";
+
+$query = $db->prepare($sql);
+$query->execute();
+$roman = $query->fetch(PDO::FETCH_ASSOC);
+
+
+$sql = "SELECT * FROM `livres` WHERE `genre` LIKE 'Bande dessinée' ORDER BY `genre` DESC";
+
+$query = $db->prepare($sql);
+$query->execute();
+$bd = $query->fetch(PDO::FETCH_ASSOC);
+
+$sql = "SELECT * FROM `livres` WHERE `genre` LIKE 'Théâtre' ORDER BY `genre` DESC";
+
+$query = $db->prepare($sql);
+$query->execute();
+$theatre = $query->fetch(PDO::FETCH_ASSOC);
+
+$sql = "SELECT * FROM `livres` WHERE `genre` LIKE 'Grandir' ORDER BY `genre` DESC";
+
+$query = $db->prepare($sql);
+$query->execute();
+$grandir = $query->fetch(PDO::FETCH_ASSOC);
+
+$sql = "SELECT * FROM `livres` WHERE `genre` LIKE 'Essai' ORDER BY `genre` DESC";
+$query = $db->prepare($sql);
+$query->execute();
+$essai = $query->fetch(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -51,12 +83,12 @@ $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
 
         img {
             width: 267px;
-            height: 350px;
+            height: 400px;
             border-radius: 3px;
 
         }
         
-        .carroussel {
+        .nouveautes {
             display: flex;
         }
 
@@ -152,8 +184,8 @@ $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
     </section1>
     <section2>
 
-    <h2>N O U V E A U T E S</h2>
-        <div class="carroussel">
+    <h2>NOUVEAUTES</h2>
+        <div class="nouveautes">
                 
                         <?php foreach ($nouveautes as $nouveaute): ?>
                             <div class="pad carte">
@@ -170,31 +202,31 @@ $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
             <div>
                 <p>Romans</p>
                 <div class="pad carte">
-                <img src="display_image.php?id=<?=$nouveaute['id']?>" alt="<?=$nouveaute['titre']?>">
+                <img src="display_image.php?id=<?=$roman['id']?>" alt="<?=$roman['titre']?>">
                 </div>
             </div>
             <div>
                 <p>BD</p>
                 <div class="pad carte">
-                <img src="display_image.php?id=<?=$nouveaute['id']?>" alt="<?=$nouveaute['titre']?>">
+                <img src="display_image.php?id=<?=$bd['id']?>" alt="<?=$bd['titre']?>">
                 </div>
             </div>
             <div>
                 <p>THEATRE</p>
                 <div class="pad carte">
-                <img src="display_image.php?id=<?=$nouveaute['id']?>" alt="<?=$nouveaute['titre']?>">
+                <img src="display_image.php?id=<?=$theatre['id']?>" alt="<?=$theatre['titre']?>">
                 </div>
             </div>
             <div>
                 <p>GRANDIR</p>
                 <div class="pad carte">
-                <img src="display_image.php?id=<?=$nouveaute['id']?>" alt="<?=$nouveaute['titre']?>">
+                <img src="display_image.php?id=<?=$grandir['id']?>" alt="<?=$grandir['titre']?>">
                 </div>
             </div>
             <div>
                 <p>ESSAIS</p>
                 <div class="pad carte">
-                <img src="display_image.php?id=<?=$nouveaute['id']?>" alt="<?=$nouveaute['titre']?>">
+                <img src="display_image.php?id=<?=$essai['id']?>" alt="<?=$essai['titre']?>">
                 </div>
             </div>
         </div>
