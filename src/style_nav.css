@@ -123,9 +123,7 @@ nav li a :hover{
 }
 
 @media screen and (max-width: 600px) {
-   .menuBurger{
-    display: "none";
-   }
+   
 }
 
 @media screen and (max-width: 425px) {
@@ -150,7 +148,7 @@ nav li a :hover{
 /* Estilo para telas de smartphone - mostra o ícone do menu hambúrguer */
 @media screen and (max-width: 1023px) {
     .menu_genre {
-        display: none; /* Oculta o menu de gêneros */
+        /* display: none; Oculta o menu de gêneros */
     }
 
     .menuBurger {
