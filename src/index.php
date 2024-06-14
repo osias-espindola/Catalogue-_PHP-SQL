@@ -1,10 +1,44 @@
 <?php
 require_once('connect.php');
 
-$sql = "SELECT * FROM `livres` WHERE `publication` > '2024-04-20' ORDER BY `genre` ASC";
+
+
+$sql = "SELECT * FROM `livres` WHERE `genre` LIKE 'Théâtre' ORDER BY `sous_genre` ASC";
+
 $query = $db->prepare($sql);
 $query->execute();
 $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
+
+$sql = "SELECT * FROM `livres` WHERE `genre` LIKE 'Roman' ORDER BY `genre` DESC";
+
+$query = $db->prepare($sql);
+$query->execute();
+$roman = $query->fetch(PDO::FETCH_ASSOC);
+
+
+$sql = "SELECT * FROM `livres` WHERE `genre` LIKE 'Bande dessinée' ORDER BY `genre` DESC";
+
+$query = $db->prepare($sql);
+$query->execute();
+$bd = $query->fetch(PDO::FETCH_ASSOC);
+
+$sql = "SELECT * FROM `livres` WHERE `genre` LIKE 'Théâtre' ORDER BY `genre` DESC";
+
+$query = $db->prepare($sql);
+$query->execute();
+$theatre = $query->fetch(PDO::FETCH_ASSOC);
+
+$sql = "SELECT * FROM `livres` WHERE `genre` LIKE 'Grandir' ORDER BY `genre` DESC";
+
+$query = $db->prepare($sql);
+$query->execute();
+$grandir = $query->fetch(PDO::FETCH_ASSOC);
+
+$sql = "SELECT * FROM `livres` WHERE `genre` LIKE 'Essai' ORDER BY `genre` DESC";
+$query = $db->prepare($sql);
+$query->execute();
+$essai = $query->fetch(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -39,9 +73,8 @@ $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
             text-align: center;
         }
 
-        h2 {
-            margin-top: 1.5%;
-            margin-left:1.5%;
+        h2, .categories p {
+            margin: 1.5% 0% 1% ;
             font-size: 2rem;
             font-weight: bold;
             color: #213447;
@@ -50,18 +83,24 @@ $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
 
         img {
             width: 267px;
-            height: 350px;
-            border-radius: 3px
+            height: 400px;
+            border-radius: 3px;
 
         }
         
-        .carroussel {
+        .nouveautes {
             display: flex;
         }
 
-        .pad {
-            margin: 0.3%;
+        
+        .categories {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 1.5% auto;
         }
+
+        
         
         @media screen and (max-width: 1440px) {
             h1 {
@@ -146,7 +185,7 @@ $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
     <section2>
 
     <h2>NOUVEAUTES</h2>
-        <div class="carroussel">
+        <div class="nouveautes">
                 
                         <?php foreach ($nouveautes as $nouveaute): ?>
                             <div class="pad carte">
@@ -156,10 +195,42 @@ $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
                    
         </div>
     </section2>
-    <div class="barre">
-
-    </div>
-    <section3></section3>
+   
+    <section3>
+        
+        <div class="categories">
+            <div>
+                <p>Romans</p>
+                <div class="pad carte">
+                <img src="display_image.php?id=<?=$roman['id']?>" alt="<?=$roman['titre']?>">
+                </div>
+            </div>
+            <div>
+                <p>BD</p>
+                <div class="pad carte">
+                <img src="display_image.php?id=<?=$bd['id']?>" alt="<?=$bd['titre']?>">
+                </div>
+            </div>
+            <div>
+                <p>THEATRE</p>
+                <div class="pad carte">
+                <img src="display_image.php?id=<?=$theatre['id']?>" alt="<?=$theatre['titre']?>">
+                </div>
+            </div>
+            <div>
+                <p>GRANDIR</p>
+                <div class="pad carte">
+                <img src="display_image.php?id=<?=$grandir['id']?>" alt="<?=$grandir['titre']?>">
+                </div>
+            </div>
+            <div>
+                <p>ESSAIS</p>
+                <div class="pad carte">
+                <img src="display_image.php?id=<?=$essai['id']?>" alt="<?=$essai['titre']?>">
+                </div>
+            </div>
+        </div>
+    </section3>
     <footer>
         <?php include 'footer.php'; ?>
     </footer>
