@@ -1,3 +1,17 @@
+<?php
+
+require_once('connect.php');
+
+$sql = "SELECT * FROM `livres` ORDER BY `genre` DESC";
+
+$query = $db->prepare($sql);
+$query->execute();
+$nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
