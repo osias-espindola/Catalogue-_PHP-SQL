@@ -30,6 +30,8 @@ span{
     align-items: center;
     background-color: #ffffff;
     border-radius: 5px;
+    width: 500px;
+    margin: 0 10px 0 10px;
 }
 .logo_nav{
     display: flex;
