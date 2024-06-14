@@ -16,6 +16,19 @@ span{
     gap: 15px;
     cursor: pointer;
 }
+
+.panier:hover{
+    transform: scale(1.4);
+}
+
+.user:hover{
+    transform: scale(1.4);
+}
+
+.menuBurger:hover{
+    transform: scale(1.4);
+}
+
 .nav_barra{
     display: flex;
     justify-content: space-between;

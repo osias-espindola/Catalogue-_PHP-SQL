@@ -37,8 +37,12 @@ $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="icon">
         
-            <img  src="/img/user.png" alt="">
-            <img  src="/img/panier.png" alt="">
+            <div class="user">
+                <img  src="/img/user.png" alt="">
+            </div>
+            <div class="panier">
+                <img  src="/img/panier.png" alt="">
+            </div>
             <div class= "menuBurger">
                 <img  src="/img/menuBurger.png" alt="" onclick= "clickMenu()">
                 <!-- <span  id= "burger" class="material-symbols-outlined" onclick= "clickMenu()">menu</span> -->
