@@ -31,8 +31,8 @@
             </div>     
         </div>  
     </div>
-    <div class="menu_fixe" >
-        <div class="menu_genre ligne_separe">
+    <div class= >
+        <div class="menu_fixe ligne_separe">
             <ul>
                 <li><a href="#">ROMANS</a></li>
                 <li><a href="#">DB</a></li> 

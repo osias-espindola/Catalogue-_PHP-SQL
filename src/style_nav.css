@@ -94,6 +94,10 @@ nav li a :hover{
     flex-wrap: nowrap;
     gap: 20px;
 }
+
+.menu_fixe{
+    display: flex;
+}
 .ligne_separe{
     border-bottom: solid #ffffff 2px;
 }
@@ -139,11 +143,15 @@ nav li a :hover{
     .menu_genre {
         /* display: flex; /*Mostra o menu de gêneros */
     }
+    .menu_fixe{
+        display: flex;
+    }
+    }
 
     .menuBurger {
         display: none; /* Continua ocultando o ícone do menu hambúrguer */
     }
-}
+
 
 /* Estilo para telas de smartphone - mostra o ícone do menu hambúrguer */
 @media screen and (max-width: 1023px) {
@@ -157,4 +165,7 @@ nav li a :hover{
     .page_name{
         display: none;
         }
+    .menu_fixe{
+        display: none;
+    }    
 }
