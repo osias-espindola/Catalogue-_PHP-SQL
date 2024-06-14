@@ -53,6 +53,13 @@ $nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
         <div class="menu_fixe ligne_separe">
             <ul>
                 <li><a href="#">ROMANS</a></li>
+                    <div class="sous_genre">
+                        <li><a href="Aventure"></a></li>
+                        <li><a href="Fantastique"></a></li>
+                        <li><a href="Policier"></a></li>
+                        <li><a href="Romance"></a></li>
+                        <li><a href=""></a></li>
+                    </div>
                 <li><a href="#">DB</a></li> 
                 <li><a href="#">THEATRE</a></li>
                 <li><a href="#">GRANDIR</a></li>
