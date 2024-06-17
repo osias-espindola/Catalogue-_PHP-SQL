@@ -1,6 +1,6 @@
 <?php
 
-include('connect.php');
+require_once('connect.php');
 
 ?>
 <!DOCTYPE html>
@@ -9,12 +9,12 @@ include('connect.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Busca</title>
+    <title>système de recherche</title>
 </head>
 <body>
     <h1>Liste de livres</h1>
     <form action="">
-        <input name="busca" value="<?php if(isset($_GET['busca'])) echo $_GET['busca']; ?>" placeholder="Faire une recherche" type="text">
+        <input name="recherche" value="<?php if(isset($_GET['recherche'])) echo $_GET['recherche']; ?>" placeholder="Faire une recherche" type="text">
         <button type="submit">Pesquisar</button>
     </form>
     <br>
@@ -25,14 +25,14 @@ include('connect.php');
             <th>Publication</th>
         </tr>
         <?php
-        if (!isset($_GET['busca'])) {
+        if (!isset($_GET['recherche'])) {
             ?>
         <tr>
             <td colspan="3">Faire une recherche...</td>
         </tr>
         <?php
         } else {
-            $pesquisa = $mysqli->real_escape_string($_GET['busca']);
+            $pesquisa = $mysqli->real_escape_string($_GET["recherche"]);
             $sql_code = 
                 "SELECT * FROM livres 
                 WHERE id LIKE '%$pesquisa%' 
