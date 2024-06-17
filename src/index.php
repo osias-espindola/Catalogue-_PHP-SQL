@@ -2,21 +2,24 @@
 require_once('connect.php');
 
 // Récupérer les nouveautés
-$sql = "SELECT * FROM `livres` WHERE `publication` > '2024-01-01'";
+$sql = "SELECT * FROM `livres` WHERE `publication` > '2024-04-01'";
 $query = $db->prepare($sql);
 $query->execute();
-$nouveautes = $query->fetchAll(PDO::FETCH_ASSOC);
+$news = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
 
 // Récupérer les livres par genre
 $genres = ['Roman', 'Bande dessinée', 'Théâtre', 'Grandir', 'Essai'];
-$livres_par_genre = [];
+$livres_genre = [];
 
 foreach ($genres as $genre) {
     $sql = "SELECT * FROM `livres` WHERE `genre` LIKE ? ORDER BY `genre` DESC";
     $query = $db->prepare($sql);
     $query->execute([$genre]);
-    $livres_par_genre[$genre] = $query->fetch(PDO::FETCH_ASSOC);
+    $livres_genre[$genre] = $query->fetch(PDO::FETCH_ASSOC);
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +28,11 @@ foreach ($genres as $genre) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
         .header {
             margin: 0;
@@ -36,7 +44,6 @@ foreach ($genres as $genre) {
             justify-content: center;
             background-image: url("img/bibliotheque.png");
             background-position: bottom;
-            /* background-size: cover; */
             background-repeat: no-repeat;
             box-shadow: 0px 5px 5px black;
             color: white;
@@ -48,7 +55,7 @@ foreach ($genres as $genre) {
         }
 
         h2 {
-            margin: 1.5% 0% 1% ;
+            margin: 1% 0% 1% ;
             font-size: 2rem;
             font-weight: bold;
             text-align: center;
@@ -60,14 +67,16 @@ foreach ($genres as $genre) {
             width: 267px;
             height: 400px;
             border-radius: 3px;
-            width: calc(16.5vw - 20px);
-            height: calc(22vw - 20px);
+
         }
         
         .nouveautes {
             display: flex;
-            margin: 1.5%;
-           flex-direction: column;
+
+            flex-direction: column;
+            width: 100%; /* Largeur du conteneur */
+            overflow: hidden; /* Masquer le dépassement d'image */
+            white-space: nowrap; /* Empêcher le saut de ligne */
         }
 
         .ligne {
@@ -75,13 +84,14 @@ foreach ($genres as $genre) {
         }
         
         .categories {
-            /* width: 100%; */
+
             display: flex;
             justify-content: center;
-            margin: 1.5% auto;
-            justify-content: space-between;
+            margin: 0 auto;
             flex-wrap: wrap;
+
         }
+
 
        @media screen and (max-width: 1440px) {
             h1 {
@@ -93,13 +103,54 @@ foreach ($genres as $genre) {
             }
 
             .header {
-                height: 550px;
+                height: 500px;
             }
         }
 
         @media screen and (max-width: 1024px) {
             h1 {
-                font-size: 4rem;
+                font-size: 3.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .header {
+
+                height: 410px;
+            }
+
+            img {
+                width: 300px;
+                height: 392px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+
+            }
+
+            .header {
+                height: 300px;
+                width: auto;
+            }
+
+            img {
+                width:300px;
+                height: 392px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
             }
 
             h2 {
@@ -107,14 +158,18 @@ foreach ($genres as $genre) {
             }
 
             .header {
-
-                height: 500px;
+                height: 260px;
+                width: auto;
+            }
+            img {
+                width:300px;
+                height: 392px;
             }
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 425px) {
             h1 {
-                font-size: 3.5rem;
+                font-size: 1.7rem;
             }
 
             h2 {
@@ -122,38 +177,12 @@ foreach ($genres as $genre) {
             }
 
             .header {
-                height: 350px;
+                height: 210px;
                 width: auto;
             }
-        }
-
-        @media screen and (max-width: 600px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 0.5rem;
-            }
-
-            .header {
-                height: 350px;
-                width: auto;
-            }
-        }
-
-        @media screen and (max-width: 425px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 0.5rem;
-            }
-
-            .header {
-                height: 300px;
-                width: auto;
+            img {
+                width:250px;
+                height: 327px;
             }
         }
 
@@ -163,11 +192,11 @@ foreach ($genres as $genre) {
             }
 
             h2 {
-                font-size: 0.3rem;
+                font-size: 0.8rem;
             }
 
             .header {
-                height: 150px;
+                height: 200px;
                 width: auto;
             }
         }
@@ -190,28 +219,31 @@ foreach ($genres as $genre) {
             <div><h2>NOUVEAUTES</h2></diV>
             <div class="ligne">
                 
-                        <?php foreach ($nouveautes as $nouveaute): ?>
+                        <?php foreach($news as $new): ?>
                             <div class="pad carte">
-                                <img src="display_image.php?id=<?=$nouveaute['id']?>" alt="<?=$nouveaute['titre']?>">
+                                <a href="fiche_produit.php"><img src="display_image.php?id=<?=$new['id']?>" alt="<?=$new['titre']?>"></a>
+                            
                             </div>
                         <?php endforeach; ?>
                    
+            </div>
         </div>
     </section2>
    
     <section3>
         
     <div class="categories">
-    <?php foreach ($genres as $genre): ?>
-        <div class="wrap">
-            <h2><?= $genre ?></h2>
-            <?php if (isset($livres_par_genre[$genre])): ?>  <div class="pad carte">
-                    <img src="display_image.php?id=<?= $livres_par_genre[$genre]['id'] ?>" alt="<?= $livres_par_genre[$genre]['titre'] ?>">
-                </div>
-            <?php endif; ?>
-        </div>
-    <?php endforeach; ?>
-</div>
+        <?php foreach($genres as $genre): ?>
+            <div class="wrap">
+                <h2><?= $genre ?></h2>
+                <?php if (isset($livres_genre[$genre])): ?>
+                    <div class="pad_carte">
+                        <a href="fiche_produit.php"><img src="display_image.php?id=<?= $livres_genre[$genre]['id'] ?>" alt="<?= $livres_genre[$genre]['titre'] ?>"></a>
+                    </div>
+                <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
     </section3>
     <footer>
         <?php include 'footer.php'; ?>
