@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: admin.php");
             exit();
         } else {
-            $_SESSION["error"] = "Une erreur s'est produite lors de l'ajout d'un'titre.";
+            $_SESSION["error"] = "Une erreur s'est produite lors de l'ajout d'un titre.";
         }
     }
 }
