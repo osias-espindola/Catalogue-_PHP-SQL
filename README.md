@@ -18,12 +18,12 @@ En utilisant principalement des requêtes SQL, afficher :
 
 1. Tous les utilisateurs dont le nom est Palmer
 2. Toutes les femmes
-3. Toutes les personnes dont l'adresses e-mail contient 'google'
+3. Toutes les personnes dont l'sous_genres e-resume contient 'google'
 4. Tous les pays dont le nom commence par la lettre 'N'
 5. Le nombre d'utilisateurs par pays dans l'ordre croissant (exemple: Spain - 3 users, Italy - 8 users, France - 12 users, etc.)
 6. Le nombre d'utilisateurs par genre
 7. La moyenne d’âge des utilisateurs de chaque genre
 8. Gérer un utilisateur :
-    - a. Insérer un utilisateur puis l'afficher (prénom, nom, adresse e-mail)
-    - b. Mettre à jour son adresse mail et afficher le résultat
+    - a. Insérer un utilisateur puis l'afficher (prénom, nom, sous_genre e-resume)
+    - b. Mettre à jour son sous_genre resume et afficher le résultat
     - c. Supprimer l’utilisateur

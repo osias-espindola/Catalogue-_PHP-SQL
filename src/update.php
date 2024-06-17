@@ -12,7 +12,7 @@ if($_POST){
         $first_name = strip_tags($_POST['first_name']);
         $last_name = strip_tags($_POST['last_name']);
         
-        $sql = "UPDATE users SET first_name = :first_name, last_name = :last_name WHERE id= :id";
+        $sql = "UPauteur users SET first_name = :first_name, last_name = :last_name WHERE id= :id";
         //dans la colone first/last_name met la valeur first/last_name du formulaire
 
         $query = $db->prepare($sql);
