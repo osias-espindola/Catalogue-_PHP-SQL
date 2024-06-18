@@ -221,7 +221,7 @@ foreach ($genres as $genre) {
                 
                         <?php foreach($news as $new): ?>
                             <div class="pad carte">
-                                <a href="fiche_produit.php?id=<?=$new["id"]?>"><img src="display_image.php?id=<?=$new['id']?>" alt="<?=$new['titre']?>"></a>
+                                <a href="fiche_produit.php?id=<?=$new["id"]?>"><img src="<?=$new['image']?>" alt="<?=$new['titre']?>"></a>
                             
                             </div>
                         <?php endforeach; ?>

@@ -6,7 +6,7 @@ $sql = "SELECT id, titre, auteur, bio, DATE_FORMAT(publication, '%d-%m-%Y') as p
     FROM livres WHERE admin_id = :admin_id";
 
 $query = $db->prepare($sql);
-$query->bindValue(":admin_id", 1, PDO::PARAM_INT);
+$query->bindValue(":admin_id", 2, PDO::PARAM_INT);
 $query->execute();
 
 $livres = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -86,24 +86,26 @@ th, td {
         <a href="disconnect.php"><button class="disconnect">Déconnection</button></a>
         </div>
     </nav>
-    <h1>Tableau de Bord Livres</h1>
+    <h1>Base de données des Livres</h1>
     <a href="create.php"><button class="ajout">Ajouter</button></a>
     <table>
         <thead class="text_center">
-            <td>titre</td>
-            <td>auteur</td>
-            <td>bio</td>
-            <td>publication</td>
-            <td>genre</td>
-            <td>sous-genre</td>
-            <td>resume</td>
-            <td>prix</td>
-            <td>image</td>
+            <td>id</td>
+            <td>Titre</td>
+            <td>Auteur</td>
+            <td>Biographie</td>
+            <td>Publié</td>
+            <td>Genre</td>
+            <td>Sous-genre</td>
+            <td>Résumé</td>
+            <td>Prix</td>
+            <td>Image</td>
             <td>Action</td>
         </thead>
         <tbody>
             <?php foreach($livres as $livre) : ?>
 
+                <td><?=$livre['id']?></td>
                 <td><?=$livre['titre']?></td>
                 <td><?=$livre["auteur"]?></td>
                 <td><?=$livre['bio']?></td>
