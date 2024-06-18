@@ -238,7 +238,7 @@ foreach ($genres as $genre) {
                 <h2><?= $genre ?></h2>
                 <?php if (isset($livres_genre[$genre])): ?>
                     <div class="pad_carte">
-                        <a href="fiche_produit.php?id=<?= $livres_genre[$genre]["id"]?>"><img src="display_image.php?id=<?= $livres_genre[$genre]['titre'] ?>" alt="<?= $livres_genre[$genre]['auteur'] ?>"></a>
+                        <a href="fiche_produit.php?id=<?=$livres_genre[$genre]["id"]?>"><img src="display_image.php?id=<?=$livres_genre[$genre]['id'] ?>" alt="<?= $livres_genre[$genre]['auteur'] ?>"></a>
                     </div>
                 <?php endif; ?>
             </div>
