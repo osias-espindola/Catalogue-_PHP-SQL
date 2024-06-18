@@ -1,5 +1,19 @@
 <?php
+session_start();    
+
+
 require_once("connect.php");
+
+function logout()
+    {
+        // Efface toutes les variables de session
+        session_unset();
+        // Détruit la session
+        session_destroy();
+        //  Redirige vers la page de connexion
+        header("Location: login_admin.php");
+        exit;
+    }
 
 // Récupérer les données de stage
 $sql = "SELECT id, titre, auteur, bio, DATE_FORMAT(publication, '%d-%m-%Y') as publication, genre, sous_genre, resume, prix, image 
@@ -80,11 +94,12 @@ th, td {
     </style>
 </head>
 <body>
-<nav class="navbar">
-                
-        <div class="navbar-right">
-        <a href="disconnect.php"><button class="disconnect">Déconnection</button></a>
-        </div>
+    <nav class="navbar">
+                    
+            <div class="navbar-right">
+            <a href="disconnect.php"><button class="disconnect">Déconnection</button></a>
+            </div>
+            
     </nav>
     <h1>Base de données des Livres</h1>
     <a href="create.php"><button class="ajout">Ajouter</button></a>
