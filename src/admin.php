@@ -16,7 +16,7 @@ function logout()
         exit;
     }
 
-// Récupérer les données de stage
+// Récupérer les données de livres
 $sql = "SELECT id, titre, auteur, bio, DATE_FORMAT(publication, '%d-%m-%Y') as publication, genre, sous_genre, resume, prix, image 
     FROM livres WHERE admin_id = :admin_id";
 
