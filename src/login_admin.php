@@ -54,7 +54,7 @@ if(isset($_POST['Nom']) && isset($_POST['Prenom']) && isset($_POST['mot_de_passe
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Login e inscrição</title>
+    <title>Conncetion Administration</title>
     <link rel="stylesheet" href="style_login.css">
 </head>
 <body>
@@ -68,7 +68,7 @@ if(isset($_POST['Nom']) && isset($_POST['Prenom']) && isset($_POST['mot_de_passe
 
             <label>Prenom</label>
            
-            <input type="Prenom" name="Prenom" placeholder="Prenom" required >
+            <input type="text" name="Prenom" placeholder="Prenom" required >
 
             <label>Mot de passe</label>
             <!-- Corrigido o tipo do input para password e o nome do campo -->

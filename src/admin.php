@@ -4,6 +4,7 @@ session_start();
 
 require_once("connect.php");
 
+
 function logout()
     {
         // Efface toutes les variables de session
@@ -20,7 +21,7 @@ $sql = "SELECT id, titre, auteur, bio, DATE_FORMAT(publication, '%d-%m-%Y') as p
     FROM livres WHERE admin_id = :admin_id";
 
 $query = $db->prepare($sql);
-$query->bindValue(":admin_id", 2, PDO::PARAM_INT);
+$query->bindValue(":admin_id", 1, PDO::PARAM_INT);
 $query->execute();
 
 $livres = $query->fetchAll(PDO::FETCH_ASSOC);

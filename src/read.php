@@ -42,7 +42,7 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
     
     <div class="fiche_produit">
                 <h1><?= $livre['titre'] ?></h1>
-                <img src="display_image.php?id=<?= $livre['id'] ?>" alt="<?= $livre['titre'] ?>">
+                <img src="<?= $livre['image'] ?>" alt="<?= $livre['titre'] ?>">
                 <p><?= nl2br($livre['auteur']) ?></p>
                 <p><?=$livre['resume'] ?></p>
                 <p><?=$livre['bio'] ?></p>
