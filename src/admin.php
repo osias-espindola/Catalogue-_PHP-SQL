@@ -1,3 +1,17 @@
+<?php
+require_once("connect.php");
+
+// Récupérer les données de stage
+$sql = "SELECT id, titre, auteur, bio, DATE_FORMAT(publication, '%d-%m-%Y') as publication, genre, sous_genre, resume, prix, image 
+    FROM livres WHERE admin_id = :admin_id";
+
+$query = $db->prepare($sql);
+$query->bindValue(":admin_id", 1, PDO::PARAM_INT);
+$query->execute();
+
+$livres = $query->fetchAll(PDO::FETCH_ASSOC);
+
+?>
 
 
 <!DOCTYPE html>
@@ -56,7 +70,10 @@ th, td {
     text-align: left;
 }
 
-    
+.taille {
+    width: 50px;
+    height: 70px;
+}   
 
 
 
@@ -85,6 +102,8 @@ th, td {
             <td>Action</td>
         </thead>
         <tbody>
+            <?php foreach($livres as $livre) : ?>
+
                 <td><?=$livre['titre']?></td>
                 <td><?=$livre["auteur"]?></td>
                 <td><?=$livre['bio']?></td>
@@ -93,16 +112,16 @@ th, td {
                 <td><?=$livre['sous_genre']?></td>
                 <td><?=$livre["resume"]?></td>
                 <td><?=$livre["prix"]?></td>
-                <td><?=$livre['image']?></td>
+                <td><img src="display_image.php?id=<?=$livre['id']?>" class="taille" alt="<?=$livre['titre']?>"></td>
 
                 <td>
-                    <a href="read.php?id=<?=$stage["id"]?>"><img src="img/circle01.png"></a>
-                    <a href="upauteur.php?id=<?=$stage["id"]?>"><img src="img/edit01.png"></a>
-                    <a href="delete.php?id=<?=$stage["id"]?>"></a><img src="img/bin01.png"></a>
+                    <a href="read.php?id=<?=$livre["id"]?>"><img src="img/circle01.png"></a>
+                    <a href="upauteur.php?id=<?=$livre["id"]?>"><img src="img/edit01.png"></a>
+                    <a href="delete.php?id=<?=$livre["id"]?>"></a><img src="img/bin01.png"></a>
                 </td>
 
                 </tr>
-            
+            <?php endforeach; ?>
         </tbody>
         
         
