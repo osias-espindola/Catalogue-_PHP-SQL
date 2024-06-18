@@ -114,7 +114,7 @@ th, td {
                 <td><?=$livre['sous_genre']?></td>
                 <td><?=$livre["resume"]?></td>
                 <td><?=$livre["prix"]?></td>
-                <td><img src="display_image.php?id=<?=$livre['id']?>" class="taille" alt="<?=$livre['titre']?>"></td>
+                <td><img src="<?=$livre['image']?>" class="taille" alt="<?=$livre['titre']?>"></td>
 
                 <td>
                     <a href="read.php?id=<?=$livre["id"]?>"><img src="img/circle01.png"></a>
