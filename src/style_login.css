@@ -1,0 +1,89 @@
+/* Estilos básicos */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Fonte legível */
+    background-color: #e8e8e8; /* Cor de fundo suave */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Container do formulário */
+.login-container {
+    background-color: #ffffff; /* Fundo branco para o formulário */
+    width: 90%;
+    max-width: 300px; /* Largura máxima para desktop */
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* Títulos */
+h2 {
+    color: #213447; /* Cor escura para o texto, mas não muito forte */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Labels e inputs */
+label, input {
+    width: 100%;
+    display: block;
+}
+
+input {
+    font-size: 16px; /* Tamanho agradável para a maioria dos usuários */
+    line-height: 1.5;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #cccccc; /* Borda sutil */
+    border-radius: 4px;
+}
+
+/* Botão de envio */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #213447; /* Cor verde, associada a 'ir em frente', 'ok' */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #3b6085; /* Um tom mais escuro ao passar o mouse */
+}
+
+/* Link para inscrição */
+.message a {
+    color: #6A82FB; /* Cor azul suave */
+    text-decoration: none;
+}
+
+.message a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse para destacar o link */
+}
+
+/* Estilos para celular */
+@media (max-width: 300px) {
+    .login-container {
+        width: 100%;
+        border-radius: 0; /* Sem bordas arredondadas para ocupar toda a tela */
+    }
+
+    h2 {
+        font-size: 20px; /* Um pouco maior para ser legível em telas menores */
+        color: #213447;
+    }
+
+    input, button {
+        font-size: 18px; /* Aumenta o tamanho da fonte para melhor toque */
+    }
+}

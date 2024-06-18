@@ -1,7 +1,7 @@
 <?php
+require_once('connect.php'); // Include the database connection file.
 
-require_once('connect.php');
-
+// HTML structure remains unchanged.
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,12 +27,12 @@ require_once('connect.php');
         <?php
         if (!isset($_GET['recherche'])) {
             ?>
-        <tr>
-            <td colspan="3">Faire une recherche...</td>
-        </tr>
-        <?php
+            <tr>
+                <td colspan="3">Faire une recherche...</td>
+            </tr>
+            <?php
         } else {
-            $pesquisa = $mysqli->real_escape_string($_GET["recherche"]);
+            $pesquisa = $mysqli->real_escape_string($_GET["recherche"]); // Sanitize user input.
             $sql_code = 
                 "SELECT * FROM livres 
                 WHERE id LIKE '%$pesquisa%' 
@@ -43,10 +43,10 @@ require_once('connect.php');
             
             if ($sql_query->num_rows == 0) {
                 ?>
-            <tr>
-                <td colspan="3">Aucun résultat n’a été trouvé...</td>
-            </tr>
-            <?php
+                <tr>
+                    <td colspan="3">Aucun résultat n’a été trouvé...</td>
+                </tr>
+                <?php
             } else {
                 while($dados = $sql_query->fetch_assoc()) {
                     ?>
@@ -58,9 +58,8 @@ require_once('connect.php');
                     <?php
                 }
             }
-            ?>
-        <?php
-        } ?>
+        }
+        ?>
     </table>
 </body>
 </html>
