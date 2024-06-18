@@ -24,8 +24,6 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
 
 ?>
 
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +35,7 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
         
 </head>
 <body>
-    <?php include 'nav.php'; ?>
+    <?php include 'nav.php' ?>
 
     
     <div class="fiche_produit">
