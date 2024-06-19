@@ -173,7 +173,7 @@ foreach ($genres as $genre) {
             }
 
             h2 {
-                font-size: 1rem;
+                font-size: 1.5rem;
             }
 
             .header {
@@ -190,9 +190,8 @@ foreach ($genres as $genre) {
             h1 {
                 font-size: 1.5rem;
             }
-
             h2 {
-                font-size: 0.8rem;
+                font-size: 1.5rem;
             }
 
             .header {
