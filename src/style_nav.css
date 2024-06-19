@@ -143,9 +143,7 @@ flex-direction: column;
     border-right: solid #ffffff 1px;
 }
 
-.ligne_separe_droit{
-    border-right: solid #ffffff 2px;
-}
+
 
 .bt_fermer{
     color: rgb(255, 255, 255);
