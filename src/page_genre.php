@@ -9,16 +9,18 @@ $news = $query->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-// Récupérer les livres par genre
-$genres = ['Roman', 'Bande dessinée', 'Théâtre', 'Grandir', 'Essai'];
-$livres_genre = [];
+// Récupérer les livres par sous_genre
+$sous_genres = ['Roman', 'Bande dessinée', 'Théâtre', 'Grandir', 'Essai'];
+$livres_sous_genre = [];
 
-foreach ($genres as $genre) {
-    $sql = "SELECT * FROM `livres` WHERE `genre` LIKE ? ORDER BY `genre` DESC";
+foreach ($sous_genres as $sous_genre) {
+    $sql = "SELECT * FROM `livres` WHERE `sous_genre` LIKE ? ORDER BY `sous_genre` DESC";
     $query = $db->prepare($sql);
-    $query->execute([$genre]);
-    $livres_genre[$genre] = $query->fetch(PDO::FETCH_ASSOC);
+    $query->execute([$sous_genre]);
+    $livres_sous_genre[$sous_genre] = $query->fetch(PDO::FETCH_ASSOC);
 }
+
+
 
 ?>
 <!DOCTYPE html>
@@ -231,18 +233,33 @@ foreach ($genres as $genre) {
    
     <section3>
         
-    <div class="categories">
-        <?php foreach($genres as $genre): ?>
+    <!-- <div class="categories">
+        <?php foreach($sous_genres as $sous_genre): ?>
             <div class="wrap">
-                <h2><?= $genre ?></h2>
-                <?php if (isset($livres_genre[$genre])): ?>
+                <h2><?= $sous_genre ?></h2>
+                <?php if (isset($livres_sous_genre[$sous_genre])): ?>
                     <div class="pad_carte">
-                        <a href="fiche_produit.php?id=<?=$livres_genre[$genre]["id"]?>"><img src="<?=$livres_genre[$genre]['image'] ?>" alt="<?= $livres_genre[$genre]['auteur'] ?>"></a>
+                        <a href="fiche_produit.php?id=<?=$livres_sous_genre[$sous_genre]["id"]?>"><img src="<?=$livres_sous_genre[$sous_genre]['image'] ?>" alt="<?= $livres_sous_genre[$sous_genre]['auteur'] ?>"></a>
                     </div>
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>
+    </div> -->
+    <div class="categories">
+    <?php foreach ($sous_genres as $sous_genre): ?>
+        <div class="wrap">
+            <h2><?= $sous_genre ?></h2>
+            <?php if (isset($livres_sous_genre[$sous_genre])): ?>
+                <div class="pad_carte">
+                    <a href="fiche_produit.php?id=<?= $livres_sous_genre[$sous_genre]['id'] ?>">
+                        <img src="<?= $livres_sous_genre[$sous_genre]['image'] ?>" alt="<?= $livres_sous_genre[$sous_genre]['auteur'] ?>">
+                    </a>
+                </div>
+            <?php endif; ?>
+        </div>
+    <?php endforeach; ?>
     </div>
+
     </section3>
     <footer>
         <?php include 'footer.php'; ?>
