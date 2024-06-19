@@ -113,7 +113,7 @@ nav li a :hover{
 
 .menu_ul{
     display: none;
-    border-top: solid white 20px;
+    
 }
 .menu_genre{
     display: flex;
@@ -139,8 +139,8 @@ flex-direction: column;
     width: 100%;
 }
 .ligne_separe{
-    border-bottom: solid #ffffff 2px;
-    border-right: solid #ffffff 2px;
+    border-bottom: solid #ffffff 1px;
+    border-right: solid #ffffff 1px;
 }
 
 .ligne_separe_droit{
