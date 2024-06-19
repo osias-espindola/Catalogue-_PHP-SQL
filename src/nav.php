@@ -48,7 +48,7 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
         </div>  
     </div>
     <div class= >
-        <div class="menu_fixe ligne_separe">
+        <div class="menu_fixe ">
             <ul>
                 <li><a href="#">ROMANS</a></li>
                     <!-- <div class="sous_genre">
