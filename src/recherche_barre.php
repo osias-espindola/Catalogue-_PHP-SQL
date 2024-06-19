@@ -34,7 +34,7 @@ if (isset($_POST["search"])) {
 </head>
 <body>
 <form method="post" action="">
-    <input type="text" name="search" placeholder="Digite aqui" required>
+    <input type="text" name="search" placeholder="Digite aqui" >
     <input type="submit" value="Pesquisar">
 </form>
 
