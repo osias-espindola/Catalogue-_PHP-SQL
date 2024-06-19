@@ -60,11 +60,11 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
     <div class="menu_ul" id="objets">
         <div class="menu_genre ligne_separe">
             <ul>
-                <li data-genre="romans"><a href="#">ROMANS</a></li>
-                <li data-genre="db"><a href="#">DB</a></li> 
-                <li data-genre="theatre"><a href="#">THEATRE</a></li>
-                <li data-genre="grandir"><a href="#">GRANDIR</a></li>
-                <li data-genre="essais"><a href="#">ESSAIS</a></li>
+                <li data-genre="romans"><a href="page_genre.php">ROMANS</a></li>
+                <li data-genre="db"><a href="page_genre.php">DB</a></li> 
+                <li data-genre="theatre"><a href="page_genre.php">THEATRE</a></li>
+                <li data-genre="grandir"><a href="page_genre.php">GRANDIR</a></li>
+                <li data-genre="essais"><a href="page_genre.php">ESSAIS</a></li>
              </ul>
         </div>
         <div class= "ligne_separe">
