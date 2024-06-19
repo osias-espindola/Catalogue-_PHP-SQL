@@ -1,35 +1,30 @@
 <?php
 session_start();
 
-if (!isset($_SESSION["admin_id"])) {
-    header("Location: login_admin.php");
-    exit();
-}
 
-require_once('connect.php');
+require_once("connect.php");
 
-$admin_id = $_SESSION["admin_id"];
 
-//Récupération du prénom de l'utilisateur
-$sqlAdmin = "SELECT prenom FROM admin WHERE id = :admin_id";
-$queryAdmin = $db->prepare($sqlAdmin);
-$queryAdmin->bindValue(":admin_id", $admin_id, PDO::PARAM_INT);
-$queryAdmin->execute();
-$admin = $queryAdmin->fetch(PDO::FETCH_ASSOC);
+function logout()
+    {
+        // Efface toutes les variables de session
+        session_unset();
+        // Détruit la session
+        session_destroy();
+        //  Redirige vers la page de connexion
+        header("Location: login_admin.php");
+        exit;
+    }
 
-if ($admin) {
-    $prenom = $admin['prenom'];
-} else {
-    $prenom = "Administrateur";
-}
+// Récupérer les données de stage
+$sql = "SELECT id, titre, auteur, bio, DATE_FORMAT(publication, '%d-%m-%Y') as publication, genre, sous_genre, resume, prix, image 
+    FROM livres WHERE admin_id = :admin_id";
 
-//Récupération des données livres
-$sqlLivres = "SELECT id, titre, auteur, bio, publication, genre, sous_genre, resume, prix, image 
-FROM livres WHERE admin_id = :admin_id"; // Modification de la requête SQL pour inclure la condition admin_id
-$queryLivres = $db->prepare($sqlLivres);
-$queryLivres->bindValue(":admin_id", $admin_id, PDO::PARAM_INT); // Liaison de la valeur admin_id
-$queryLivres->execute();
-$livres = $queryLivres->fetchAll(PDO::FETCH_ASSOC);
+$query = $db->prepare($sql);
+$query->bindValue(":admin_id", 1, PDO::PARAM_INT);
+$query->execute();
+
+$livres = $query->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
