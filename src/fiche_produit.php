@@ -7,7 +7,7 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
 
     $sql = "SELECT * FROM livres WHERE id = :id";
     $query = $db->prepare($sql);
-    $query->bindValue(":id", $_SESSION['id'], PDO::PARAM_INT);
+    $query->bindValue(":id", $id, PDO::PARAM_INT);
     $query->execute();
     $livre = $query->fetch();
 
