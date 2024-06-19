@@ -147,7 +147,7 @@ flex-direction: column;
     border-right: solid #ffffff 2px;
 }
 
-.bt_retour{
+.bt_fermer{
     color: rgb(255, 255, 255);
     text-decoration:none;   
     padding: 15px;
