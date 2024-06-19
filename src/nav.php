@@ -164,7 +164,7 @@ genreOptions.forEach(option => {
         // Mostra apenas a coluna correspondente ao gênero selecionado
         const selectedColumn = sousGenreList.querySelector(`[data-genre="${selectedGenre}"] ul`);
         if (selectedColumn) {
-            selectedColumn.style.display = 'block';
+            selectedColumn.style.display = 'flex'
         }
     });
 });

@@ -131,6 +131,7 @@ nav li a :hover{
 
 .sous_genre ul{
 display: none;
+flex-direction: column;
 }
 .menu_fixe{
     display: flex;
