@@ -85,13 +85,63 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
             </ul>
         </div>  
         <div class= "menu_sous_genre ligne_separe">
-            <ul class="flex_col">
-                <li><a href="#">Aventures</a></li>
-                <li><a href="#">Policier</a></li>
-                <li><a href="#">Fantastic</a></li>
-                <li><a href="#">Science fiction</a></li>
-                <li><a href="#">Amour</a></li>
+        
+                    <div class="sous_genre">
+                        <ul>
+                            <li><a href="">Aventure</a></li>
+                            <li><a href="">Fantastique</a></li>
+                            <li><a href="">Policier</a></li>
+                            <li><a href="">Romance</a></li>
+                            <li><a href="">Science-Fiction</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
+            <ul>      
+               
+                    <div class="sous_genre">
+                        <ul>
+                            <li><a href="">Aventure</a></li>
+                            <li><a href="">Guerre</a></li>
+                        </ul>
+                    </div>
+                </li> 
+            </ul>
+            <ul>
+                  
+                        <div class="sous_genre">
+                            <ul>
+                                <li><a href="">Théâtre de l'absurde</a></li>
+                                <li><a href="">Théâtre de la maturation</a></li>
+                                <li><a href="">Théâtre initiatique</a></li>
+                                <li><a href="">Théâtre psychologique</a></li>
+                            </ul>
+                        </div>
+                    </li>
+            </ul>
+            <ul>
+                  
+                        <div class="sous_genre">
+                            <ul>
+                                <li><a href="">Développement de l'enfant</a></li>
+                                <li><a href="">Evolution personnelle</a></li>
+                                <li><a href="">Psychologie du développement</a></li>
+                                <li><a href="">Récit autobiographique</a></li>
+                            </ul>
+                        </div>
+                    </li>
+             </ul>
+             <ul>
+                
+                    <div class="sous_genre">
+                        <ul>
+                            <li><a href="">Féminisme</a></li>
+                            <li><a href="">Philosophie sociale</a></li>
+                            <li><a href="">Sociologie</a></li>
+                        </ul>
+                    </div>
+                </li>
+             </ul>
         </div> <!--class=menu_sous_genre-->
         <p ><a href="#" class="bt_retour">Retour</a></p>
     </div> <!--menu_ul-->

@@ -122,7 +122,12 @@ nav li a :hover{
     flex-wrap: nowrap;
     gap: 20px;
 }
-
+.menu_sous_genre {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
 .menu_fixe{
     display: flex;
     justify-content:center;
