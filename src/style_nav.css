@@ -140,6 +140,11 @@ flex-direction: column;
 }
 .ligne_separe{
     border-bottom: solid #ffffff 2px;
+    border-right: solid #ffffff 2px;
+}
+
+.ligne_separe_droit{
+    border-right: solid #ffffff 2px;
 }
 
 .bt_retour{
