@@ -8,10 +8,6 @@ $query = $db->prepare($sql);
 $query->execute();
 $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
 
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -71,29 +67,74 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
     <div class="menu_ul" id="objets">
         <div class="menu_genre ligne_separe">
             <ul>
-                <li><a href="#">ROMANS</a></li>
-                <li><a href="#">DB</a></li> 
-                <li><a href="#">THEATRE</a></li>
-                <li><a href="#">GRANDIR</a></li>
-                <li><a href="#">ESSAIS</a></li>
+                <li data-genre="romans"><a href="#">ROMANS</a></li>
+                <li data-genre="db"><a href="#">DB</a></li> 
+                <li data-genre="theatre"><a href="#">THEATRE</a></li>
+                <li data-genre="grandir"><a href="#">GRANDIR</a></li>
+                <li data-genre="essais"><a href="#">ESSAIS</a></li>
              </ul>
         </div>
         <div class= "ligne_separe">
             <ul>
-                <li><a href="#">PAGE D'ACCUEIL</a></li>
-                <li><a href="#">NOUVEAUTES</a></li>
+                <li data-genre="page_d_acuueil"><a href="#">PAGE D'ACCUEIL</a></li>
+                <li data-genre="nouveautes"><a href="#">NOUVEAUTES</a></li>
             </ul>
         </div>  
-        <div class= "menu_sous_genre ligne_separe">
-            <ul class="flex_col">
-                <li><a href="#">Aventures</a></li>
-                <li><a href="#">Policier</a></li>
-                <li><a href="#">Fantastic</a></li>
-                <li><a href="#">Science fiction</a></li>
-                <li><a href="#">Amour</a></li>
+        <div class= "menu_sous_genre ligne_separe" id="sous_genre">
+                    <div class="sous_genre" data-genre="romans" >
+                        <ul>
+                            <li><a href="">Aventure</a></li>
+                            <li><a href="">Fantastique</a></li>
+                            <li><a href="">Policier</a></li>
+                            <li><a href="">Romance</a></li>
+                            <li><a href="">Science-Fiction</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
+            <ul>      
+                    <div class="sous_genre" data-genre="db">
+                        <ul>
+                            <li><a href="">Aventure</a></li>
+                            <li><a href="">Guerre</a></li>
+                        </ul>
+                    </div>
+                </li> 
+            </ul>
+            <ul>                 
+                        <div class="sous_genre" data-genre="theatre">
+                            <ul>
+                                <li><a href="">Théâtre de l'absurde</a></li>
+                                <li><a href="">Théâtre de la maturation</a></li>
+                                <li><a href="">Théâtre initiatique</a></li>
+                                <li><a href="">Théâtre psychologique</a></li>
+                            </ul>
+                        </div>
+                    </li>
+            </ul>
+            <ul>         
+                        <div class="sous_genre" data-genre="grandir">
+                            <ul>
+                                <li><a href="">Développement de l'enfant</a></li>
+                                <li><a href="">Evolution personnelle</a></li>
+                                <li><a href="">Psychologie du développement</a></li>
+                                <li><a href="">Récit autobiographique</a></li>
+                            </ul>
+                        </div>
+                    </li>
+             </ul>
+             <ul>       
+                    <div class="sous_genre" data-genre="essais">
+                        <ul>
+                            <li><a href="">Féminisme</a></li>
+                            <li><a href="">Philosophie sociale</a></li>
+                            <li><a href="">Sociologie</a></li>
+                        </ul>
+                    </div>
+                </li>
+             </ul>
         </div> <!--class=menu_sous_genre-->
-        <p ><a href="#" class="bt_retour">Retour</a></p>
+        <p ><a href="#" class="bt_fermer"><img src="/img/fermer.png" alt="fermer"  onclick= "clickMenu()"></a></p>
     </div> <!--menu_ul-->
 </nav>  
 <script>
@@ -104,6 +145,31 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
             objets.style.display = "block"
         }
     }
+
+    
+     // Obtém a lista de opções de gênero
+     const genreOptions = document.querySelectorAll('[data-genre]');
+
+// Obtém a lista de sous_genre
+const sousGenreList = document.getElementById('sous_genre');
+
+// Adiciona um evento de clique a cada opção de gênero
+genreOptions.forEach(option => {
+    option.addEventListener('click', () => {
+        const selectedGenre = option.getAttribute('data-genre');
+        // Esconde todas as colunas de sous_genre
+        sousGenreList.querySelectorAll('.sous_genre ul').forEach(column => {
+            column.style.display = 'none';
+        });
+        // Mostra apenas a coluna correspondente ao gênero selecionado
+        const selectedColumn = sousGenreList.querySelector(`[data-genre="${selectedGenre}"] ul`);
+        if (selectedColumn) {
+            selectedColumn.style.display = 'flex'
+        }
+    });
+});
+
+
 </script>
 </body>
 </html>

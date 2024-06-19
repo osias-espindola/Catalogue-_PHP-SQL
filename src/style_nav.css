@@ -122,7 +122,17 @@ nav li a :hover{
     flex-wrap: nowrap;
     gap: 20px;
 }
+.menu_sous_genre {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
 
+.sous_genre ul{
+display: none;
+flex-direction: column;
+}
 .menu_fixe{
     display: flex;
     justify-content:center;
@@ -130,9 +140,14 @@ nav li a :hover{
 }
 .ligne_separe{
     border-bottom: solid #ffffff 2px;
+    border-right: solid #ffffff 2px;
 }
 
-.bt_retour{
+.ligne_separe_droit{
+    border-right: solid #ffffff 2px;
+}
+
+.bt_fermer{
     color: rgb(255, 255, 255);
     text-decoration:none;   
     padding: 15px;
