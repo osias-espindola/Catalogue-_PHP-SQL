@@ -211,7 +211,7 @@ foreach ($genres as $genre) {
             de littérature<br><br>Bonne visite</h1>
         </div>
     </section1>
-    <section2>
+    <!-- <section2>
 
     
         <div class="nouveautes">
@@ -227,7 +227,7 @@ foreach ($genres as $genre) {
                    
             </div>
         </div>
-    </section2>
+    </section2> -->
    
     <section3>
         
