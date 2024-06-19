@@ -134,7 +134,7 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
                 </li>
              </ul>
         </div> <!--class=menu_sous_genre-->
-        <p ><a href="#" class="bt_fermer"><img src="/img/fermer.png" alt="fermer"></a></p>
+        <p ><a href="#" class="bt_fermer"><img src="/img/fermer.png" alt="fermer"  onclick= "clickMenu()"></a></p>
     </div> <!--menu_ul-->
 </nav>  
 <script>
