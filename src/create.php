@@ -1,7 +1,14 @@
 <?php
 session_start();
 
+if (!isset($_SESSION["admin_id"])) {
+    header("Location: login_admin.php");
+    exit();
+}
+
 require_once("connect.php");
+
+$admin_id = $_SESSION["admin_id"];  // Ajout de l'admin_id depuis la session
 
 // Vérification si le formulaire est soumis
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -19,10 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (empty($titre) || empty($auteur) || empty($bio) || empty($publication) || empty($genre) || empty($sous_genre) || empty($resume) || empty($prix) || empty($_FILES["image"]["name"])) {
         $_SESSION["error"] = "Veuillez remplir tous les champs.";
     } else {
-        // Chemin où l'image sera sauvegardée sur le serveur
-        $uploadDir = __DIR__ . '/Images/'; // Chemin relatif au dossier de votre projet où stocker les images
+        // Définir le chemin du répertoire en fonction du genre sélectionné
+        $uploadDir = './Images/' . $sous_genre . '/'; // Chemin relatif au dossier de votre projet où stocker les images
         $uploadFile = $uploadDir . basename($_FILES['image']['name']);
-        
+
         // Vérifie si le répertoire existe, sinon le créer
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0777, true);
@@ -31,9 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Vérifie si le fichier a été correctement téléchargé
         if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
             // Insertion des données dans la base de données
-            $sql = "INSERT INTO livres (titre, auteur, bio, publication, genre, sous_genre, resume, prix, image) 
-                    VALUES (:titre, :auteur, :bio, :publication, :genre, :sous_genre, :resume, :prix, :image)";
+            $imagePath = $uploadDir . basename($_FILES['image']['name']); // Chemin relatif de l'image
+            $sql = "INSERT INTO livres (admin_id, titre, auteur, bio, publication, genre, sous_genre, resume, prix, image) 
+                    VALUES (:admin_id, :titre, :auteur, :bio, :publication, :genre, :sous_genre, :resume, :prix, :image)";
             $query = $db->prepare($sql);
+            $query->bindParam(":admin_id", $admin_id);
             $query->bindParam(":titre", $titre);
             $query->bindParam(":auteur", $auteur);
             $query->bindParam(":bio", $bio);
@@ -42,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $query->bindParam(":sous_genre", $sous_genre);
             $query->bindParam(":resume", $resume);
             $query->bindParam(":prix", $prix);
-            $query->bindParam(":image", $_FILES['image']['name']);
+            $query->bindParam(":image", $imagePath);
 
             if ($query->execute()) {
                 $_SESSION["message"] = "Titre ajouté avec succès.";
@@ -59,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -112,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <option value="Critique sociale">Critique sociale</option>
                     <option value="Développement de l'enfance">Développement de l'enfance</option>
                     <option value="Études postcoloniales">Études postcoloniales</option>
-                    <option value="Evolution personnelle">Evolution personnelle</option>
+                    <option value="Évolution personnelle">Évolution personnelle</option>
                     <option value="Fantastique">Fantastique</option>
                     <option value="Féminisme">Féminisme</option>
                     <option value="Guerre">Guerre</option>
@@ -142,7 +151,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input type="file" name="image" required>
             </div>
             <div>
-                <button class="ajouter">Ajouter</button>
+                <button class="ajouter" type="submit">Ajouter</button>
             </div>
         </div>
     </form>

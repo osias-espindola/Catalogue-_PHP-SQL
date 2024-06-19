@@ -49,6 +49,7 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
                 <p><?=$livre['prix'] . " €" ?></p>
                 <!-- Ajoutez d'autres détails du produit ici -->
             </div>
+            <a href="admin.php"><button>Retour</button></a>
 
         </body>
         </html>
