@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="crud.css">
     <link rel="stylesheet" href="navAdmin.css">
 
@@ -88,7 +88,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <?php if(isset($_SESSION["error"])): ?>
         <div class="error"><?php echo $_SESSION["error"]; unset($_SESSION["error"]); ?></div>
     <?php endif; ?>
-    
+    <div class="formUpdate">
+    <div class="right-column">
     <form class="connexion" action="create.php" method="post" enctype="multipart/form-data">
         <div class="form">
             <div>
@@ -163,6 +164,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
         </div>
     </form>
+    </div>
+    </div>
 
     <a href="admin.php"><button class="retour">Retour</button></a>
 </body>

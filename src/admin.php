@@ -24,7 +24,7 @@ if ($admin) {
 }
 
 //Récupération des données livres
-$sqlLivres = "SELECT id, titre, auteur, bio, publication, genre, sous_genre, resume, prix, image 
+$sqlLivres = "SELECT id, titre, auteur, bio, DATE_FORMAT(publication, '%d-%m-%Y') as publication, genre, sous_genre, resume, prix, image 
 FROM livres WHERE admin_id = :admin_id"; // Modification de la requête SQL pour inclure la condition admin_id
 $queryLivres = $db->prepare($sqlLivres);
 $queryLivres->bindValue(":admin_id", $admin_id, PDO::PARAM_INT); // Liaison de la valeur admin_id
@@ -38,7 +38,7 @@ $livres = $queryLivres->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="crud.css">
     <link rel="stylesheet" href="navAdmin.css">
     <title>Administration</title>

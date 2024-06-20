@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #edfcfd;
+    background-color: #f5f4ef;
     font-family: "poppins-regular", sans-serif;
     text-align: center;
     margin-bottom: 20px;
@@ -21,9 +21,13 @@ body {
     margin-bottom: 2%;
 }
 
-.logoNavAdmin img{
-    width: 20%;
-}
+.logo {
+    margin: 5px 0;
+ }
+
+/* .logoNavAdmin img{
+    width: 30%;
+} */
 
 .navBarAdmin_right {
 display: flex;
@@ -51,7 +55,7 @@ h1 {
 
 table {
     border-collapse: collapse;
-    background-color: #f5f5f5;
+    background-color: #fdfeff;
 }
 
 thead td {
@@ -72,7 +76,19 @@ th, td {
 
 .taille {
     width: 50px;
-    height: 60px;
+    height: 70px;
+}
+
+.fiche_produit {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+
+span {
+    color:#4579d8;
 }
 
 .formUpdate {
@@ -80,6 +96,7 @@ th, td {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
 }
 
 
@@ -89,8 +106,9 @@ th, td {
 }
 
 .taille2 {
-    width: 300px;
-    height: 350px;
+    width: 290px;
+    height: 415px;
+
 }
 
 
@@ -145,7 +163,6 @@ th, td {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
 
 button.ajouter, button.retour {
     padding: 10px 20px;
