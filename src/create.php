@@ -73,11 +73,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="crud.css">
+    <link rel="stylesheet" href="navAdmin.css">
+
+
     <title>Ajouter un livre</title>
 </head>
 
 <body>
+
+<?php include 'nav_admin.php'; ?>
     <h1>Ajouter un livre</h1>
     
     <?php if(isset($_SESSION["error"])): ?>
@@ -103,6 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <label for="publication">Publication</label>
                 <input type="date" name="publication" required>
             </div>
+        
             <div>
                 <label for="genre">Genre</label>
                 <select name="genre" required>
@@ -113,6 +119,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <option value="Essai">Essai</option>
                 </select>
             </div>
+        </div>
+        <div class="form">
             <div>
                 <label for="sous_genre">Sous-genre</label>
                 <select name="sous_genre" required>

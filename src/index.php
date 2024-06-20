@@ -2,15 +2,13 @@
 require_once('connect.php');
 
 // Récupérer les nouveautés
-$sql = "SELECT * FROM `livres` WHERE `publication` > '2024-04-01'";
+$sql = "SELECT * FROM `livres` WHERE `publication` > '2023-01-01'";
 $query = $db->prepare($sql);
 $query->execute();
 $news = $query->fetchAll(PDO::FETCH_ASSOC);
 
-
-
 // Récupérer les livres par genre
-$genres = ['Roman', 'Bande dessinée', 'Théâtre', 'Grandir', 'Essai'];
+$genres = ['Roman', 'BD', 'Théâtre', 'Grandir', 'Essai'];
 $livres_genre = [];
 
 foreach ($genres as $genre) {
@@ -19,7 +17,6 @@ foreach ($genres as $genre) {
     $query->execute([$genre]);
     $livres_genre[$genre] = $query->fetch(PDO::FETCH_ASSOC);
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +25,6 @@ foreach ($genres as $genre) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -52,10 +48,11 @@ foreach ($genres as $genre) {
 
         h1 {
             font-size: 4.5rem;
+
         }
 
         h2 {
-            margin: 1% 0% 1% ;
+            margin: 1% 0%;
             font-size: 2rem;
             font-weight: bold;
             text-align: center;
@@ -67,33 +64,53 @@ foreach ($genres as $genre) {
             width: 267px;
             height: 400px;
             border-radius: 3px;
-
         }
-        
-        .nouveautes {
-            display: flex;
 
-            flex-direction: column;
-            width: 100%; /* Largeur du conteneur */
-            overflow: hidden; /* Masquer le dépassement d'image */
-            white-space: nowrap; /* Empêcher le saut de ligne */
+        .nouveautes {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 0.5%;
         }
 
         .ligne {
             display: flex;
+            transition: transform 0.5s ease-in-out;
         }
-        
-        .categories {
 
+        .carte {
+            flex: 0 0 auto;
+            margin: 0 5px;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        .categories {
             display: flex;
             justify-content: center;
+            gap: 1%;
             margin: 0 auto;
             flex-wrap: wrap;
-
         }
 
-
-       @media screen and (max-width: 1440px) {
+        @media screen and (max-width: 1440px) {
             h1 {
                 font-size: 4.5rem;
             }
@@ -117,7 +134,6 @@ foreach ($genres as $genre) {
             }
 
             .header {
-
                 height: 410px;
             }
 
@@ -134,7 +150,6 @@ foreach ($genres as $genre) {
 
             h2 {
                 font-size: 1.7rem;
-
             }
 
             .header {
@@ -143,7 +158,7 @@ foreach ($genres as $genre) {
             }
 
             img {
-                width:300px;
+                width: 300px;
                 height: 392px;
             }
         }
@@ -161,8 +176,9 @@ foreach ($genres as $genre) {
                 height: 260px;
                 width: auto;
             }
+
             img {
-                width:300px;
+                width: 300px;
                 height: 392px;
             }
         }
@@ -180,8 +196,9 @@ foreach ($genres as $genre) {
                 height: 210px;
                 width: auto;
             }
+
             img {
-                width:250px;
+                width: 250px;
                 height: 327px;
             }
         }
@@ -190,6 +207,7 @@ foreach ($genres as $genre) {
             h1 {
                 font-size: 1.5rem;
             }
+
             h2 {
                 font-size: 1.5rem;
             }
@@ -199,53 +217,96 @@ foreach ($genres as $genre) {
                 width: auto;
             }
         }
-    
     </style>
 </head>
 <body>
     <?php include 'nav.php'; ?>
 
-    <section1>
+    <section>
         <div class="header">
-            <h1>Bienvenue au coin<br>
-            de littérature<br><br>Bonne visite</h1>
+            <h1>Bienvenue au coin<br>de littérature<br><br>Bonne visite</h1>
         </div>
-    </section1>
-    <section2>
-
-    
+    </section>
+    <section>
         <div class="nouveautes">
-            <div><h2>NOUVEAUTES</h2></diV>
+            <h2>NOUVEAUTES</h2>
+            <button class="arrow arrow-left">&#10094;</button>
             <div class="ligne">
-                
-                        <?php foreach($news as $new): ?>
-                            <div class="pad carte">
-                                <a href="fiche_produit.php?id=<?=$new["id"]?>"><img src="<?=$new['image']?>" alt="<?=$new['titre']?>"></a>
-                            
-                            </div>
-                        <?php endforeach; ?>
-                   
-            </div>
-        </div>
-    </section2>
-   
-    <section3>
-        
-    <div class="categories">
-        <?php foreach($genres as $genre): ?>
-            <div class="wrap">
-                <h2><?= $genre ?></h2>
-                <?php if (isset($livres_genre[$genre])): ?>
-                    <div class="pad_carte">
-                        <a href="fiche_produit.php?id=<?=$livres_genre[$genre]["id"]?>"><img src="<?=$livres_genre[$genre]['image'] ?>" alt="<?= $livres_genre[$genre]['auteur'] ?>"></a>
+                <?php foreach($news as $new): ?>
+                    <div class="carte">
+                        <a href="fiche_produit.php?id=<?=$new["id"]?>">
+                            <img src="<?=$new['image']?>" alt="<?=$new['titre']?>">
+                        </a>
                     </div>
-                <?php endif; ?>
+                <?php endforeach; ?>
             </div>
-        <?php endforeach; ?>
-    </div>
-    </section3>
+            <button class="arrow arrow-right">&#10095;</button>
+        </div>
+    </section>
+    <section>
+        <div class="categories">
+            <?php foreach($genres as $genre): ?>
+                <div class="wrap">
+                    <h2><?= $genre ?></h2>
+                    <?php if (isset($livres_genre[$genre])): ?>
+                        <div class="pad_carte">
+                            <a href="fiche_produit.php?id=<?=$livres_genre[$genre]["id"]?>">
+                                <img src="<?=$livres_genre[$genre]['image'] ?>" alt="<?= $livres_genre[$genre]['auteur'] ?>">
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
     <footer>
         <?php include 'footer.php'; ?>
     </footer>
+
+    <script>
+        const ligne = document.querySelector('.ligne');
+        const cards = document.querySelectorAll('.carte');
+        const leftArrow = document.querySelector('.arrow-left');
+        const rightArrow = document.querySelector('.arrow-right');
+        let index = 0;
+
+        function showNextImage() {
+            index++;
+            updateCarousel();
+        }
+
+        function showPreviousImage() {
+            index--;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const translateX = -index * (cards[0].clientWidth + 20);
+            ligne.style.transition = 'transform 0.5s ease-in-out';
+            ligne.style.transform = `translateX(${translateX}px)`;
+
+            // Looping logic
+            if (index >= cards.length / 2) {
+                setTimeout(() => {
+                    ligne.style.transition = 'none';
+                    index = 0;
+                    const resetTranslateX = -index * (cards[0].clientWidth + 20);
+                    ligne.style.transform = `translateX(${resetTranslateX}px)`;
+                }, 500);
+            } else if (index < 0) {
+                setTimeout(() => {
+                    ligne.style.transition = 'none';
+                    index = cards.length / 2 - 1;
+                    const resetTranslateX = -index * (cards[0].clientWidth + 20);
+                    ligne.style.transform = `translateX(${resetTranslateX}px)`;
+                }, 500);
+            }
+        }
+
+        leftArrow.addEventListener('click', showPreviousImage);
+        rightArrow.addEventListener('click', showNextImage);
+
+        setInterval(showNextImage, 3000);
+    </script>
 </body>
 </html>

@@ -91,74 +91,84 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="crud.css">
+    <link rel="stylesheet" href="navAdmin.css">
+
     <title>Modifier le livre</title>
 </head>
 <body>
 
+<?php include 'nav_admin.php'; ?>
+
    <h1>Modifier <?= htmlspecialchars($livre["titre"]) ?></h1>
 
-   <img src="<?=$livre['image']?>" class="taille" alt="<?=$livre['titre']?>">
-    
-    <form class="connexion" method="post">
-        <div class="form">
-            <div>
-                <label for="titre">Titre</label>
-                <input type="text" name="titre" value="<?= htmlspecialchars($livre["titre"]) ?>" required>
+   <div class="formUpdate">
+    <div class="left-column">
+        <img src="<?=$livre['image']?>"  alt="<?=$livre['titre']?>">
+    </div>
+    <div class="right-column">
+    <div class="form-container">
+        <form class="connexion" method="post">
+            <div class="form">
+                <div>
+                    <label for="titre">Titre</label>
+                    <input type="text" name="titre" value="<?= htmlspecialchars($livre["titre"]) ?>" required>
+                </div>
+                <div>
+                    <label for="auteur">Auteur</label>
+                    <input type="text" name="auteur" value="<?= htmlspecialchars($livre["auteur"]) ?>" required>
+                </div>
+                <div>
+                    <label for="bio">Biographie</label>
+                    <textarea name="bio" required><?= htmlspecialchars($livre["bio"]) ?></textarea>
+                </div>
+                <div>
+                    <label for="publication">Publication</label>
+                    <input type="date" name="publication" value="<?= htmlspecialchars($livre["publication"]) ?>" required>
+                </div>
+                <div>
+                    <label for="genre">Genre</label>
+                    <select name="genre" required>
+                        <option value="Roman" <?= ($livre["genre"] === "Roman") ? "selected" : "" ?>>Roman</option>
+                        <option value="Bande dessinée" <?= ($livre["genre"] === "Bande dessinée") ? "selected" : "" ?>>Bande dessinée</option>
+                        <option value="Théâtre" <?= ($livre["genre"] === "Théâtre") ? "selected" : "" ?>>Théâtre</option>
+                        <option value="Grandir" <?= ($livre["genre"] === "Grandir") ? "selected" : "" ?>>Grandir</option>
+                        <option value="Essai" <?= ($livre["genre"] === "Essai") ? "selected" : "" ?>>Essai</option>
+                    </select>
+                </div>
             </div>
-            <div>
-                <label for="auteur">Auteur</label>
-                <input type="text" name="auteur" value="<?= htmlspecialchars($livre["auteur"]) ?>" required>
+            <div class="form">
+                <div>
+                    <label for="sous_genre">Sous-genre</label>
+                    <select name="sous_genre" required>
+                        <option value="Anthropologie" <?= ($livre["sous_genre"] === "Anthropologie") ? "selected" : "" ?>>Anthropologie</option>
+                        <option value="Aventure" <?= ($livre["sous_genre"] === "Aventure") ? "selected" : "" ?>>Aventure</option>
+                        <option value="Critique sociale" <?= ($livre["sous_genre"] === "Critique sociale") ? "selected" : "" ?>>Critique sociale</option>
+                        <option value="Développement de l'enfance" <?= ($livre["sous_genre"] === "Développement de l'enfance") ? "selected" : "" ?>>Développement de l'enfance</option>
+                        <option value="Études postcoloniales" <?= ($livre["sous_genre"] === "Études postcoloniales") ? "selected" : "" ?>>Études postcoloniales</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="resume">Résumé</label>
+                    <textarea name="resume" required><?= htmlspecialchars($livre["resume"]) ?></textarea>
+                </div>
+                <div>
+                    <label for="prix">Prix</label>
+                    <input type="text" name="prix" value="<?= htmlspecialchars($livre["prix"]) ?>" required>
+                </div>
+                <div>
+                    <label for="image_path">Chemin de l'Image</label>
+                    <input type="text" name="image_path" value="<?= htmlspecialchars($livre["image"]) ?>" required>
+                </div>
+                
+                <input type="hidden" name="id" value="<?= $livre["id"] ?>">
+                <button type="submit">Modifier</button>
             </div>
-            <div>
-                <label for="bio">Biographie</label>
-                <textarea name="bio" required><?= htmlspecialchars($livre["bio"]) ?></textarea>
-            </div>
-            <div>
-                <label for="publication">Publication</label>
-                <input type="date" name="publication" value="<?= htmlspecialchars($livre["publication"]) ?>" required>
-            </div>
-            <div>
-                <label for="genre">Genre</label>
-                <select name="genre" required>
-                    <option value="Roman" <?= ($livre["genre"] === "Roman") ? "selected" : "" ?>>Roman</option>
-                    <option value="Bande dessinée" <?= ($livre["genre"] === "Bande dessinée") ? "selected" : "" ?>>Bande dessinée</option>
-                    <option value="Théâtre" <?= ($livre["genre"] === "Théâtre") ? "selected" : "" ?>>Théâtre</option>
-                    <option value="Grandir" <?= ($livre["genre"] === "Grandir") ? "selected" : "" ?>>Grandir</option>
-                    <option value="Essai" <?= ($livre["genre"] === "Essai") ? "selected" : "" ?>>Essai</option>
-                </select>
-            </div>
-            <div>
-                <label for="sous_genre">Sous-genre</label>
-                <select name="sous_genre" required>
-                    <option value="Anthropologie" <?= ($livre["sous_genre"] === "Anthropologie") ? "selected" : "" ?>>Anthropologie</option>
-                    <option value="Aventure" <?= ($livre["sous_genre"] === "Aventure") ? "selected" : "" ?>>Aventure</option>
-                    <option value="Critique sociale" <?= ($livre["sous_genre"] === "Critique sociale") ? "selected" : "" ?>>Critique sociale</option>
-                    <option value="Développement de l'enfance" <?= ($livre["sous_genre"] === "Développement de l'enfance") ? "selected" : "" ?>>Développement de l'enfance</option>
-                    <option value="Études postcoloniales" <?= ($livre["sous_genre"] === "Études postcoloniales") ? "selected" : "" ?>>Études postcoloniales</option>
-                </select>
-            </div>
-            <div>
-                <label for="resume">Résumé</label>
-                <textarea name="resume" required><?= htmlspecialchars($livre["resume"]) ?></textarea>
-            </div>
-            <div>
-                <label for="prix">Prix</label>
-                <input type="text" name="prix" value="<?= htmlspecialchars($livre["prix"]) ?>" required>
-            </div>
-            
-                <label for="image_path">Chemin de l'Image</label>
-                <input type="text" name="image_path" value="<?= htmlspecialchars($livre["image"]) ?>" required>
-            </div>
-           <!-- <div>
-                <label for="image">Image</label>
-                <input type="file" name="image" value="<?= htmlspecialchars($livre["image"]) ?>" required>
-            </div> -->
+        </form>
+    </div>
+</div>
+</div>
 
-            <input type="hidden" name="id" value="<?= $livre["id"] ?>">
-            <button type="submit">Modifier</button>
-        </div>
-    </form>
 
     <a href="admin.php"><button>Retour</button></a>
 

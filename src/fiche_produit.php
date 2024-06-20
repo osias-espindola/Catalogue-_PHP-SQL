@@ -7,7 +7,7 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
 
     $sql = "SELECT * FROM livres WHERE id = :id";
     $query = $db->prepare($sql);
-    $query->bindValue(":id", $_SESSION['id'], PDO::PARAM_INT);
+    $query->bindValue(":id", $id, PDO::PARAM_INT);
     $query->execute();
     $livre = $query->fetch();
 
@@ -32,12 +32,12 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
     <title>Page de <?= $livre["titre"] ?></title>
 
 
-        
+
 </head>
 <body>
     <?php include 'nav.php' ?>
 
-    
+
     <div class="fiche_produit">
                 <h1><?= $livre['titre'] ?></h1>
                 <img src="<?= $livre['image'] ?>" alt="<?= $livre['titre'] ?>">
@@ -50,4 +50,3 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
             <?php include 'footer.php'; ?>
         </body>
         </html>
-        

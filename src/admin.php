@@ -39,70 +39,18 @@ $livres = $queryLivres->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="crud.css">
+    <link rel="stylesheet" href="navAdmin.css">
     <title>Administration</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #edfcfd;
-            font-family: "poppins-regular", sans-serif;
-            text-align: center;
-            margin-bottom: 20px;
-            box-sizing: content-box;
-            color: #5b5b5c;
-        }
 
-        button {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 16px;
-            margin: 4px 0px 4px 50px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        table {
-            border-collapse: collapse;
-            background-color: #f5f5f5;
-        }
-
-        thead td {
-            background-color: #3278e2;
-            text-align: center;
-            color: #fff;
-        }
-
-        table, td {
-            margin: 2% auto 0;
-            border: 1px solid #acabab;
-        }
-
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-
-        .taille {
-            width: 50px;
-            height: 70px;
-        }   
-    </style>
+        
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-right">
-            <a href="disconnect.php"><button class="disconnect">Déconnection</button></a>
-        </div>
-    </nav>
+<?php include 'nav_admin.php'; ?>
+    
     <h1>Base de données des Livres</h1>
-    <h3><?php echo "Bonjour " . $prenom; ?></3>
-    <a href="create.php"><button class="ajout">Ajouter</button></a>
+   
+    <a href="create.php"><button class="ajout">Ajouter un produit</button></a>
     <table>
         <thead class="text_center">
             <tr>
