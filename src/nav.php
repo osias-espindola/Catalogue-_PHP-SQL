@@ -50,7 +50,7 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
     <div class= >
         <div class="menu_fixe ">
             <ul>
-                <li><a href="#">ROMANS</a></li>
+                <li><a href="page_genre.php?genre='roman'">ROMANS</a></li>
                 <li><a href="#">DB</a></li> 
                 <li><a href="#">THÉÂTRE</a></li>
                 <li><a href="#">GRANDIR</a></li>
