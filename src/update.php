@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="crud.css">
     <link rel="stylesheet" href="navAdmin.css">
 
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
    <div class="formUpdate">
     <div class="left-column">
-        <img src="<?=$livre['image']?>"  alt="<?=$livre['titre']?>">
+        <img src="<?=$livre['image']?>" class="taille2" alt="<?=$livre['titre']?>">
     </div>
     <div class="right-column">
     <div class="form-container">
