@@ -53,12 +53,11 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
         <div class=>
             <div class="menu_fixe ">
                 <ul>
-                    <li><a href="index.php">ACCUEIL</a></li>
-                    <li><a href="roman.php">ROMAN</a></li>
-                    <li><a href="bd.php">DB</a></li>
-                    <li><a href="theatre.php">THÉÂTRE</a></li>
-                    <li><a href="grandir.php">GRANDIR</a></li>
-                    <li><a href="essai.php">ESSAI</a></li>
+                    <li><a href="#">ROMANS</a></li>
+                    <li><a href="#">DB</a></li>
+                    <li><a href="#">THÉÂTRE</a></li>
+                    <li><a href="#">GRANDIR</a></li>
+                    <li><a href="#">ESSAIS</a></li>
                 </ul>
             </div>
             <div class="menu_ul" id="objets">

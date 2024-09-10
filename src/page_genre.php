@@ -2,24 +2,27 @@
 require_once('connect.php');
 
 // Récupérer les nouveautés
-$sql = "SELECT * FROM `livres` WHERE `publication` > year(now())";
+$sql = "SELECT * FROM `livres` WHERE `publication` > year(now())" ;
 $query = $db->prepare($sql);
 $query->execute();
 $news = $query->fetchAll(PDO::FETCH_ASSOC);
 
+// Récupérer les nouveautés
+$sql = "SELECT * FROM `livres` where 'genre' = ':genre'  ORDER BY `publication` DESC" ;
+$query = $db->prepare($sql);
+bindValue(":genre",$_GET['genre']);
 
 
 // Récupérer les livres par sous_genre
-$sous_genres = ['Roman', 'Bande dessinée', 'Théâtre', 'Grandir', 'Essai'];
-$livres_sous_genre = [];
+// $sous_genres = ['Roman', 'Bande dessinée', 'Théâtre', 'Grandir', 'Essai'];
+// $livres_sous_genre = [];
 
-foreach ($sous_genres as $sous_genre) {
-    $sql = "SELECT * FROM `livres` WHERE `sous_genre` LIKE ? ORDER BY `sous_genre` DESC";
-    $query = $db->prepare($sql);
-    $query->execute([$sous_genre]);
-    $livres_sous_genre[$sous_genre] = $query->fetch(PDO::FETCH_ASSOC);
-}
-
+// foreach ($sous_genres as $sous_genre) {
+//     $sql = "SELECT * FROM `livres` WHERE `sous_genre` LIKE ? ORDER BY `sous_genre` DESC";
+//     $query = $db->prepare($sql);
+//     $query->execute([$sous_genre]);
+//     $livres_sous_genre[$sous_genre] = $query->fetch(PDO::FETCH_ASSOC);
+// }
 
 
 ?>
@@ -213,11 +216,11 @@ foreach ($sous_genres as $sous_genre) {
             de littérature<br><br>Bonne visite</h1>
         </div>
     </section1>
-    <!-- <section2>
+    <section2>
 
     
-        <div class="nouveautes">
-            <div><h2>NOUVEAUTES</h2></diV>
+        <div class="nouveautes ">
+            <div><h2>Nouveautés du genre </h2></diV>
             <div class="ligne">
                 
                         <?php foreach($news as $new): ?>
@@ -229,11 +232,21 @@ foreach ($sous_genres as $sous_genre) {
                    
             </div>
         </div>
-    </section2> -->
+        <div class="nouveautes">
+        <h2>Genre</h2>
+        <div class="ligne">
+            <!-- <?php foreach ($genres as $genre): ?> -->
+                <div class="pad carte">
+                    <a href="fiche_produit.php?id=<?= $genre["id"] ?>"><img src="<?= $genre['image'] ?>" alt="<?= $genre['titre'] ?>"></a>
+                </div>
+            <!-- <?php endforeach; ?> -->
+        </div>
+    </div>
+    </section2>
    
     <section3>
-        
-    <!-- <div class="categories">
+<!--         
+    <div class="categories">
         <?php foreach($sous_genres as $sous_genre): ?>
             <div class="wrap">
                 <h2><?= $sous_genre ?></h2>
@@ -244,7 +257,7 @@ foreach ($sous_genres as $sous_genre) {
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>
-    </div> -->
+    </div>
     <div class="categories">
     <?php foreach ($sous_genres as $sous_genre): ?>
         <div class="wrap">
@@ -260,7 +273,7 @@ foreach ($sous_genres as $sous_genre) {
     <?php endforeach; ?>
     </div>
 
-    </section3>
+    </section3> -->
     <footer>
         <?php include 'footer.php'; ?>
     </footer>
