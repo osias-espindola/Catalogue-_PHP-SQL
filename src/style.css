@@ -139,6 +139,7 @@ img {
    width: 267px;
    height: 400px;
    border-radius: 3px;
+   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .nouveautes {
@@ -152,6 +153,7 @@ img {
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
+   gap: 30px;
    transition: transform 0.5s ease-in-out;
 }
 
@@ -182,7 +184,6 @@ img {
 .categories {
    display: flex;
    justify-content: center;
-   gap: 1%;
    margin: 0 auto;
    flex-wrap: wrap;
 }

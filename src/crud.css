@@ -19,6 +19,12 @@ h1 {
     margin: 40px 0;
 }
 
+img {
+ 
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
 .paru p {
     margin-bottom: 20px;
 }

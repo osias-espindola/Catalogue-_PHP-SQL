@@ -79,6 +79,7 @@ foreach ($genres as $genre) {
         width: 267px;
         height: 400px;
         border-radius: 3px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     }
 
     .nouveautes {
