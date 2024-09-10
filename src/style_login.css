@@ -1,7 +1,6 @@
-/* Estilos básicos */
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif; /* Fonte legível */
-    background-color: #e8e8e8; /* Cor de fundo suave */
+/* body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e8e8e8; 
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,13 +8,13 @@ body {
     align-items: center;
     flex-direction: column;
     height: 100vh;
-}
+} */
 
 /* Container do formulário */
 .login-container {
     background-color: #ffffff; /* Fundo branco para o formulário */
     width: 90%;
-    max-width: 300px; /* Largura máxima para desktop */
+    min-width: 300px; /* Largura máxima para desktop */
     margin: 0 auto;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
@@ -69,21 +68,4 @@ button:hover {
 
 .message a:hover {
     text-decoration: underline; /* Sublinhado ao passar o mouse para destacar o link */
-}
-
-/* Estilos para celular */
-@media (max-width: 300px) {
-    .login-container {
-        width: 100%;
-        border-radius: 0; /* Sem bordas arredondadas para ocupar toda a tela */
-    }
-
-    h2 {
-        font-size: 20px; /* Um pouco maior para ser legível em telas menores */
-        color: #213447;
-    }
-
-    input, button {
-        font-size: 18px; /* Aumenta o tamanho da fonte para melhor toque */
-    }
 }

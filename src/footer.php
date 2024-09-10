@@ -16,6 +16,10 @@
             box-sizing: border-box;
             font-family: arial;
         }
+
+        .footer {
+            margin: 5% 0;
+        }
         
         .bg-footer {
             display:flex;
@@ -40,47 +44,47 @@
         }
 
         @media screen and (max-width: 600px) {
-    .bg-footer p {
+        .bg-footer p {
         font-size: 2.5rem;
-    }
-    .bg-footer {
+        }
+        .bg-footer {
         height: 130px;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .bg-footer p {
-    font-size: 2rem;
-    }
-
-    .bg-footer {
-        height: 100px;
-    }
-}
-
-@media screen and (max-width: 375px) {
-    .bg-footer p {
-            font-size: 1.5rem;
-            }
-
-            .bg-footer {
-            height: 80px;
-            }
+        }
         }
 
-
-        @media screen and (max-width: 350px) {
-            .footer-text {
-                flex-direction: column;
-                align-items: center; 
-                text-align: center;
-                margin: 2px ;
-            
-            }.footer-text p {
-                font-size: 0.8rem;
-            }
+        @media screen and (max-width: 425px) {
+        .bg-footer p {
+        font-size: 2rem;
         }
-    
+
+        .bg-footer {
+            height: 100px;
+        }
+        }
+
+        @media screen and (max-width: 375px) {
+        .bg-footer p {
+                font-size: 1.5rem;
+                }
+
+                .bg-footer {
+                height: 80px;
+                }
+            }
+
+
+            @media screen and (max-width: 350px) {
+                .footer-text {
+                    flex-direction: column;
+                    align-items: center; 
+                    text-align: center;
+                    margin: 2px ;
+                
+                }.footer-text p {
+                    font-size: 0.8rem;
+                }
+            }
+        
 
         </style>
 </head>

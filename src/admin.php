@@ -38,7 +38,6 @@ $livres = $queryLivres->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="crud.css">
     <link rel="stylesheet" href="navAdmin.css">
     <title>Administration</title>
@@ -50,7 +49,7 @@ $livres = $queryLivres->fetchAll(PDO::FETCH_ASSOC);
     
     <h1>Base de données des Livres</h1>
    
-    <a href="create.php"><button class="ajout">Ajouter un produit</button></a>
+    <a href="create.php"><button class="retour">Ajouter un produit</button></a>
     <table>
         <thead class="text_center">
             <tr>

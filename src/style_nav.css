@@ -4,10 +4,10 @@
     box-sizing: border-box;
 }
 
-span{
+/* span{
     color: rgba(255, 255, 255, 0.747);
 
-}
+} */
 .icon{
     display: flex;
     flex-direction: row;

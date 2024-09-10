@@ -8,49 +8,15 @@ body {
     margin-bottom: 20px;
     box-sizing: content-box;
     color: #5b5b5c;
-
-}
-
-.navBarAdmin {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #213447;
-    color: white;
-    font-size:1.7rem;
-    margin-bottom: 2%;
-}
-
-.logo {
-    margin: 5px 0;
- }
-
-/* .logoNavAdmin img{
-    width: 30%;
-} */
-
-.navBarAdmin_right {
-display: flex;
-}
-
-button {
-    background-color: #213447;
-    border: white;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 4px 0px;
-    cursor: pointer;
-    border-radius: 5px;
 }
 
 h1 {
     margin-bottom: 2%;
     font-size: 1.5rem;
+}
 
+.paru p{
+    margin: 40px 0;
 }
 
 table {
@@ -84,6 +50,12 @@ th, td {
     align-items: center;
     max-width: 800px;
     margin: 0 auto;
+    gap: 2%;
+}
+
+.text_produit p {
+    text-align: left;
+    padding-bottom: 5%;
 
 }
 
@@ -96,7 +68,6 @@ span {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
 }
 
 
@@ -108,14 +79,12 @@ span {
 .taille2 {
     width: 290px;
     height: 415px;
-
 }
 
 
 .formUpdate .right-column {
     padding-left: 20px;
     width: 820px;
-
 }
 
 
@@ -166,7 +135,7 @@ span {
 
 button.ajouter, button.retour {
     padding: 10px 20px;
-    background-color: #213447;
+    background-color: #427bf5;
     color: white;
     border: none;
     border-radius: 4px;
@@ -174,6 +143,118 @@ button.ajouter, button.retour {
     transition: background-color 0.3s;
 }
 
-button.ajouter:hover, button.retour:hover {
-    background-color: #218838;
+button:hover, button.ajouter:hover, button.retour:hover {
+    background-color: #319948;
+}
+
+.retour {
+    margin-top: 1%;
+}
+
+@media screen and (max-width: 1440px) {
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .header {
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .header {
+        height: 410px;
+    }
+
+    img {
+        width: 300px;
+        height: 392px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    .header {
+        height: 300px;
+        width: auto;
+    }
+
+    img {
+        width: 300px;
+        height: 392px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .header {
+        height: 260px;
+        width: auto;
+    }
+
+    img {
+        width: 300px;
+        height: 392px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .header {
+        height: 210px;
+        width: auto;
+    }
+
+    img {
+        width: 250px;
+        height: 327px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .header {
+        height: 200px;
+        width: auto;
+    }
 }
