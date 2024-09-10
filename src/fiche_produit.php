@@ -38,15 +38,15 @@ FROM livres WHERE id = :id";
 
 </head>
 
-<body>
-    <?php include 'nav.php' ?>
+<?php include 'nav.php' ?>
 
+<body>
 
     <div class="fiche_produit">
         <div class="paru">
             <h1><?= $livre['titre'] ?></h1><br>
             <p><em><span>Parution le : </em></span><?=$livre['publication'] ?></p>
-            <br>
+
             <div class="img_produit"><img src="<?= $livre['image'] ?>" alt="<?= $livre['titre'] ?>"></div>
         </div>
         <div class="text_produit">

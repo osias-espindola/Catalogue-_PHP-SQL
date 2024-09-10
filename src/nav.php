@@ -53,11 +53,12 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
         <div class=>
             <div class="menu_fixe ">
                 <ul>
-                    <li><a href="#">ROMANS</a></li>
-                    <li><a href="#">DB</a></li>
-                    <li><a href="#">THÉÂTRE</a></li>
-                    <li><a href="#">GRANDIR</a></li>
-                    <li><a href="#">ESSAIS</a></li>
+                    <li><a href="index.php">ACCUEIL</a></li>
+                    <li><a href="roman.php">ROMANS</a></li>
+                    <li><a href="bd.php">DB</a></li>
+                    <li><a href="theatre.php">THÉÂTRE</a></li>
+                    <li><a href="grandir.php">GRANDIR</a></li>
+                    <li><a href="essai.php">ESSAIS</a></li>
                 </ul>
             </div>
             <div class="menu_ul" id="objets">
@@ -72,18 +73,18 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="ligne_separe">
                     <ul>
-                        <li data-genre="page_d_acuueil"><a href="#">PAGE D'ACCUEIL</a></li>
-                        <li data-genre="nouveautes"><a href="#">NOUVEAUTES</a></li>
+                        <li data-genre="page_d_accueil"><a href="index.php">PAGE D'ACCUEIL</a></li>
+
                     </ul>
                 </div>
                 <div class="menu_sous_genre ligne_separe" id="sous_genre">
                     <div class="sous_genre" data-genre="romans">
                         <ul>
-                            <li><a href="">Aventure</a></li>
-                            <li><a href="">Fantastique</a></li>
-                            <li><a href="">Policier</a></li>
-                            <li><a href="">Romance</a></li>
-                            <li><a href="">Science-Fiction</a></li>
+                            <li><a href="aventure.php">Aventure</a></li>
+                            <li><a href="fantastique.php">Fantastique</a></li>
+                            <li><a href="policier.php">Policier</a></li>
+                            <li><a href="romance.php">Romance</a></li>
+                            <li><a href="science-fiction.php">Science-Fiction</a></li>
                         </ul>
                     </div>
                     </li>
@@ -91,8 +92,8 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
                     <ul>
                         <div class="sous_genre" data-genre="db">
                             <ul>
-                                <li><a href="">Aventure</a></li>
-                                <li><a href="">Guerre</a></li>
+                                <li><a href="bd.php">Aventure</a></li>
+                                <li><a href="bd.php">Guerre</a></li>
                             </ul>
                         </div>
                         </li>
@@ -100,10 +101,10 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
                     <ul>
                         <div class="sous_genre" data-genre="theatre">
                             <ul>
-                                <li><a href="">Théâtre de l'absurde</a></li>
-                                <li><a href="">Théâtre de la maturation</a></li>
-                                <li><a href="">Théâtre initiatique</a></li>
-                                <li><a href="">Théâtre psychologique</a></li>
+                                <li><a href="theatre.php">Théâtre de l'absurde</a></li>
+                                <li><a href="theatre.php">Théâtre de la maturation</a></li>
+                                <li><a href="theatre.php">Théâtre initiatique</a></li>
+                                <li><a href="theatre.php">Théâtre psychologique</a></li>
                             </ul>
                         </div>
                         </li>
@@ -111,10 +112,10 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
                     <ul>
                         <div class="sous_genre" data-genre="grandir">
                             <ul>
-                                <li><a href="">Développement de l'enfant</a></li>
-                                <li><a href="">Evolution personnelle</a></li>
-                                <li><a href="">Psychologie du développement</a></li>
-                                <li><a href="">Récit autobiographique</a></li>
+                                <li><a href="grandir.php">Développement de l'enfant</a></li>
+                                <li><a href="grandir.php">Evolution personnelle</a></li>
+                                <li><a href="grandir.php">Psychologie du développement</a></li>
+                                <li><a href="grandir.php">Récit autobiographique</a></li>
                             </ul>
                         </div>
                         </li>
@@ -122,9 +123,9 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
                     <ul>
                         <div class="sous_genre" data-genre="essais">
                             <ul>
-                                <li><a href="">Féminisme</a></li>
-                                <li><a href="">Philosophie sociale</a></li>
-                                <li><a href="">Sociologie</a></li>
+                                <li><a href="essai.php">Féminisme</a></li>
+                                <li><a href="essai.php">Philosophie sociale</a></li>
+                                <li><a href="essai.php">Sociologie</a></li>
                             </ul>
                         </div>
                         </li>
