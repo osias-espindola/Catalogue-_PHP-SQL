@@ -19,7 +19,7 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="style_nav.css">
-    <title>nav barra</title>
+    <title>nav barre</title>
 </head>
 
 <body>

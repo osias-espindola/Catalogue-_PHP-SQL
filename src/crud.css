@@ -155,14 +155,12 @@ button:hover, button.ajouter:hover, button.retour:hover {
     margin-top: 1%;
 }
 
-@media screen and (max-width: 1440px) {
-   
+/*responsive*/
 
+@media (max-width: 1024px) {
+    .img_produit img {
+        width: 200px;
     }
-
-
-@media screen and (max-width: 1024px) {
-
 }
 
 @media screen and (max-width: 768px) {
