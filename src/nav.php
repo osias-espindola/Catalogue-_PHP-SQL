@@ -53,6 +53,7 @@ $tous_genre = $query->fetchAll(PDO::FETCH_ASSOC);
         <div class=>
             <div class="menu_fixe ">
                 <ul>
+                    <li><a href="http://127.0.0.1:5500/index.html">Retour au Portfolio</a></li>
                     <li><a href="index.php">ACCUEIL</a></li>
                     <li><a href="roman.php">ROMANS</a></li>
                     <li><a href="bd.php">DB</a></li>

@@ -154,8 +154,8 @@ foreach ($genres as $genre) {
         }
 
         img {
-            width: 300px;
-            height: 392px;
+            width: 230px;
+            height: 344px;
         }
     }
 
@@ -174,8 +174,8 @@ foreach ($genres as $genre) {
         }
 
         img {
-            width: 300px;
-            height: 392px;
+            width: 220px;
+            height: 329px;
         }
     }
 
@@ -193,10 +193,7 @@ foreach ($genres as $genre) {
             width: auto;
         }
 
-        img {
-            width: 300px;
-            height: 392px;
-        }
+
     }
 
     @media screen and (max-width: 425px) {
@@ -213,10 +210,7 @@ foreach ($genres as $genre) {
             width: auto;
         }
 
-        img {
-            width: 250px;
-            height: 327px;
-        }
+
     }
 
     @media screen and (max-width: 375px) {
